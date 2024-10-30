@@ -1,0 +1,43 @@
+/* SLIDER DOTS */
+.slider_Dots {
+  overflow: hidden;
+  position: relative;
+}
+.slide-list {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 132px;
+}
+.slide {
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.dot {
+  background-color: #e7e7e7;
+  border-radius: 10px;
+  height: 20px;
+  margin: 10px;
+  width: 20px;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+.dot.selected {
+  background-color: #c4c4c4;
+}
