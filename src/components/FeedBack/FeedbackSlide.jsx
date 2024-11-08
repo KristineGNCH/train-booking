@@ -1,3 +1,6 @@
+import reviewOne from "../../assets/img/reviewONE.jpg";
+import "./FeedbackSlider.css";
+
 export default function FeedbackSlide({ data: { name, text, photo, id } }) {
     return (
       <div className="feedbacks-items__item">

@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 
 import { setParams } from "../../reducers/routesParamsSlice.js";
-import { resetVans } from "../../reducers/vansParamsSlice.js";
+import { resetCoach } from "../../reducers/coachParamsSlice.js";
 import { resetRoutes } from "../../reducers/routesParamsSlice.js";
 import { resetSeats } from "../../reducers/seatsParamsSlice.js";
 import Navigator from "./Nav";
@@ -48,7 +48,7 @@ export default function Header() {
 
   const setParamsinStore = (evt) => {
     evt.preventDefault();
-    dispatch(resetVans());
+    dispatch(resetCoach());
     dispatch(resetRoutes());
     dispatch(resetSeats());
     const request = {
@@ -74,7 +74,7 @@ export default function Header() {
 
       <div className="header-container container">
         <div className="header__slogan">
-          <h1>
+          <h1 className="header__slogan_title">
             Вся жизнь - <b>путешествие!</b>
           </h1>
         </div>
@@ -82,7 +82,7 @@ export default function Header() {
         <div className="ticket">
           <form className="ticket-form">
             <div className="header-form__direction">
-              <h2 className="ticket-form__head">Направление</h2>
+              <h2 className="ticket-form__title">Направление</h2>
               <div className="header-form__items">
                 <div className="header-form__item">
                   <input
@@ -102,7 +102,7 @@ export default function Header() {
                   <img className="header-form__icon" src={point} alt="image" />
                 </div>
                 <div className="rotate">
-                  <img src={rotate} alt="rotate" />
+                  <img src={rotate} alt="image" />
                 </div>
                 <div className="header-form__item">
                   <input
@@ -124,12 +124,14 @@ export default function Header() {
               </div>
             </div>
             <div className="header-form__date">
-              <h2 className="ticket-form__head">Дата</h2>
+              <h2 className="ticket-form__title">Дата</h2>
               <div className="header-form__items">
                 <div className="header-form__item">
                   <div className="datepicker">
+                    
+                    <div className="datepicker__wrapper">
                     <Calendar onChange={onChange} value={value} />
-                    <div className="datepicker__wrapper"></div>
+                    </div>
                   </div>
                   <img
                     className="header-form__icon"
@@ -137,7 +139,11 @@ export default function Header() {
                     alt="image"
                   />
                 </div>
-                <div className="rotate"></div>
+                <div className="rotate">
+                <div className="rotate">
+                  <img src={rotate} alt="image" />
+                </div>
+                </div>
                 <div className="header-form__item">
                   <div className="datepicker">
                     <Calendar onChange={onChange} value={value} />
@@ -155,7 +161,7 @@ export default function Header() {
             <div className="header-form__submit">
               <div className="header-form__item">
                 <button
-                  className="find-tickets__button right"
+                  className="find-tickets__button "
                   onClick={setParamsinStore}
                 >
                   Найти билеты

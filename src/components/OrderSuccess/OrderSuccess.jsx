@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { resetVans } from "../../reducers/vansParamsSlice";
+import { resetCoach } from "../../reducers/coachParamsSlice";
 import { resetRoutes } from "../../reducers/routesParamsSlice";
 import { resetSeats } from "../../reducers/seatsParamsSlice";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,7 @@ export default function Successfulorder() {
 
   const backMainPage = () => {
     navigate("/");
-    dispatch(resetVans());
+    dispatch(resetCoach());
     dispatch(resetRoutes());
     dispatch(resetSeats());
   };

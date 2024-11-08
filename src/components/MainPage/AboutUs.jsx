@@ -2,7 +2,7 @@ export default function AboutUs() {
     return (
       <section className="about-us"  id="aboutUs">
         <div className="container">
-          <h1 className="about-us__title">О нас</h1>
+          <h2 className="about-us__title">О нас</h2>
           <div className="about-us__wrapper">
             <div className="line-vertical"></div>
             <div className="about-us__content">

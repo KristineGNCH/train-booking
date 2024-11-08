@@ -1,6 +1,7 @@
 import React, { useEffect, useState, createContext } from "react";
 import FeedbackList from "./FeedbackList";
 import Dots from "./Dots.jsx";
+import list from "../../service/FeedBack.js";
 
 import "./FeedbackSlider.css";
 
@@ -9,8 +10,6 @@ export const SliderContext = createContext();
 export default function Slider() {
   const [items, setItems] = useState([]);
   const [slide, setSlide] = useState(0);
-  const [touchPosition, setTouchPosition] = useState(null);
-
   const sliceIntoChunks = (arr, chunkSize) => {
     const res = [];
     for (let i = 0; i < arr.length; i += chunkSize) {
@@ -21,7 +20,6 @@ export default function Slider() {
   };
 
   useEffect(() => {
-    const list = require("../../service/FeedBack.json");
     setItems(sliceIntoChunks(list, 2));
   }, []);
 

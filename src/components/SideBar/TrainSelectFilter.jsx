@@ -2,26 +2,26 @@ import { useDispatch } from "react-redux";
 import PriceFilter from "./PriceFilter";
 
 import { setOneParam } from "../../reducers/routesParamsSlice";
-import { vanClasses } from "../../service/dataTransform";
+import { coachClasses } from "../../service/dataTransform";
 import { DepartureFilter } from "./DepartureFilter";
 
 export default function TrainSelectFilter() {
   const dispatch = useDispatch();
 
-  const handleChangeTypeVan = (evt) => {
-    if (evt.target.value === vanClasses.second) {
+  const handleChangecoachType = (evt) => {
+    if (evt.target.value === coachClasses.second) {
       evt.target.checked
         ? dispatch(setOneParam({ key: "have_second_class", value: true }))
         : dispatch(setOneParam({ key: "have_second_class", value: false }));
-    } else if (evt.target.value === vanClasses.first) {
+    } else if (evt.target.value === coachClasses.first) {
       evt.target.checked
         ? dispatch(setOneParam({ key: "have_first_class", value: true }))
         : dispatch(setOneParam({ key: "have_first_class", value: false }));
-    } else if (evt.target.value === vanClasses.third) {
+    } else if (evt.target.value === coachClasses.third) {
       evt.target.checked
         ? dispatch(setOneParam({ key: "have_third_class", value: true }))
         : dispatch(setOneParam({ key: "have_third_class", value: false }));
-    } else if (evt.target.value === vanClasses.fourth) {
+    } else if (evt.target.value === coachClasses.fourth) {
       evt.target.checked
         ? dispatch(setOneParam({ key: "have_fourth_class", value: true }))
         : dispatch(setOneParam({ key: "have_fourth_class", value: false }));
@@ -76,8 +76,8 @@ export default function TrainSelectFilter() {
                 <label className="switch">
                   <input
                     type="checkbox"
-                    value={vanClasses.second}
-                    onClick={(evt) => handleChangeTypeVan(evt)}
+                    value={coachClasses.second}
+                    onClick={(evt) => handleChangecoachType(evt)}
                   />
                   <span className="slider round"></span>
                 </label>
@@ -90,8 +90,8 @@ export default function TrainSelectFilter() {
                 <label className="switch">
                   <input
                     type="checkbox"
-                    value={vanClasses.third}
-                    onClick={(evt) => handleChangeTypeVan(evt)}
+                    value={coachClasses.third}
+                    onClick={(evt) => handleChangecoachType(evt)}
                   />
                   <span className="slider round"></span>
                 </label>
@@ -105,8 +105,8 @@ export default function TrainSelectFilter() {
                   <input type="checkbox" />
                   <span
                     className="slider round"
-                    value={vanClasses.fourth}
-                    onClick={(evt) => handleChangeTypeVan(evt)}
+                    value={coachClasses.fourth}
+                    onClick={(evt) => handleChangecoachType(evt)}
                   ></span>
                 </label>
               </div>
@@ -118,8 +118,8 @@ export default function TrainSelectFilter() {
                 <label className="switch">
                   <input
                     type="checkbox"
-                    value={vanClasses.first}
-                    onClick={(evt) => handleChangeTypeVan(evt)}
+                    value={coachClasses.first}
+                    onClick={(evt) => handleChangecoachType(evt)}
                   />
                   <span className="slider round"></span>
                 </label>
@@ -133,7 +133,7 @@ export default function TrainSelectFilter() {
                   <input
                     type="checkbox"
                     value="have_wifi"
-                    onClick={(evt) => handleChangeTypeVan(evt)}
+                    onClick={(evt) => handleChangecoachType(evt)}
                   />
                   <span className="slider round"></span>
                 </label>
@@ -147,7 +147,7 @@ export default function TrainSelectFilter() {
                   <input
                     type="checkbox"
                     value="is_express"
-                    onClick={(evt) => handleChangeTypeVan(evt)}
+                    onClick={(evt) => handleChangecoachType(evt)}
                   />
                   <span className="slider round"></span>
                 </label>

@@ -1,4 +1,5 @@
 import Slider from "../FeedBack/FeedbackSlider.jsx";
+import "./MainPage.css";
 
 export default function Feedbacks() {
   return (

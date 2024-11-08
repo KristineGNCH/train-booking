@@ -1,4 +1,4 @@
-import MainSearchTickets from "../components/Header/MainSearchTickets";
+import MainSearchTickets from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 export default function Layout({ main, sidebar, sidebarBottom }) {

@@ -1,8 +1,8 @@
-const vanClasses = {
-  first: "first",
-  second: "second",
-  third: "third",
-  fourth: "fourth",
+const coachClasses = {
+  sitting: "sitting",
+  reserved: "reserved",
+  compartment: "compartment",
+  luxe: "luxe",
 };
 
 function showDate(timestamp) {
@@ -94,29 +94,29 @@ const sortByDuration = (arr) => {
   return arr2;
 };
 
-const drowVansList = (filterVansList) => {
-  if (filterVansList.length === 0 || !filterVansList.length) {
+const drowCoachList = (filterCoachList) => {
+  if (filterCoachList.length === 0 || !filterCoachList.length) {
     return;
   }
   let obj = {};
-  for (let i = 0; i < filterVansList.length; i++) {
+  for (let i = 0; i < filterCoachList.length; i++) {
     i === 0 ? (obj[i] = true) : (obj[i] = false);
   }
   return obj;
 };
 
-const drowNumber = (index, typeVan) => {
+const drowNumber = (index, coachType) => {
   const shemeNum = {
     first: 1,
     second: 6,
     third: 11,
     fourth: 16,
   };
-  return shemeNum[typeVan] + index;
+  return shemeNum[coachType] + index;
 };
 
-const filterVans = (result, typeVan) => {
-  let arr = result.filter((item) => item.coach.class_type === typeVan);
+const filterCoach = (result, coachType) => {
+  let arr = result.filter((item) => item.coach.class_type === coachType);
   return arr.map((item) => ({ ...item, checked: true }));
 };
 
@@ -136,13 +136,13 @@ export {
   showDurationMinutes,
   showPrice,
   showSeats,
-  drowVansList,
+  drowCoachList,
   drowNumber,
-  filterVans,
+  filterCoach,
   sortByTime,
   sortByPrice,
   sortByDuration,
   makeArgs,
   seatToggle,
 };
-export { vanClasses };
+export { coachClasses };

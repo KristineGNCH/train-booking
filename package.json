@@ -1,11 +1,11 @@
 {
   "name": "train-booking",
   "private": true,
-  "repository": "https://github.com/KristineGNCH/train-booking" ,
+  "repository": "https://github.com/KristineGNCH/train-booking",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

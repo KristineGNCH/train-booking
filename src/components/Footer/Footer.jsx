@@ -79,6 +79,7 @@ export default function Footer() {
             >
               <label
                 className="footer-main__subscribe__item__label"
+                id="subscribe__form"
                 htmlFor="subscribe__form"
               >
                 Будьте в курсе событий
@@ -106,39 +107,19 @@ export default function Footer() {
             <div className="footer-main__subscribe__social-media-list">
               <ul className="social-media-list">
                 <li className="social-media-list__item">
-                  <img
-                    src={youtube}
-                    alt="image"
-                    className="icon-active"
-                  />
+                  <img src={youtube} alt="image" className="icon-active" />
                 </li>
                 <li className="social-media-list__item">
-                  <img
-                    src={facebook}
-                    alt="image"
-                    className="icon-active"
-                  />
+                  <img src={facebook} alt="image" className="icon-active" />
                 </li>
                 <li className="social-media-list__item">
-                  <img
-                    src={twitter}
-                    alt="image"
-                    className="icon-active"
-                  />
+                  <img src={twitter} alt="image" className="icon-active" />
                 </li>
                 <li className="social-media-list__item">
-                  <img
-                    src={linkedin}
-                    alt="image"
-                    className="icon-active"
-                  />
+                  <img src={linkedin} alt="image" className="icon-active" />
                 </li>
                 <li className="social-media-list__item">
-                  <img
-                    src={google}
-                    alt="image"
-                    className="icon-active"
-                  />
+                  <img src={google} alt="image" className="icon-active" />
                 </li>
               </ul>
             </div>
