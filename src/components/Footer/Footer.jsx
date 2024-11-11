@@ -23,7 +23,7 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer-wrapper">
+      <div className="footer-wrapper container">
         <div className="footer-main__contacts" id="contacts">
           <h3 className="footer-main_title">Свяжитесь с нами</h3>
           <ul className="footer-main__contacts__items">

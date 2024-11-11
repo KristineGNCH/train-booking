@@ -1,0 +1,38 @@
+.footer {
+    background: #2D2B2F;
+
+}
+
+.footer-wrapper {
+    display: flex;
+    gap: 254px;
+
+}
+
+.footer-main__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    color: #FFF;
+}
+
+.footer-main_title {
+    font-family: 'Roboto';
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.footer-main__contacts__item:not(:first-child) {
+    padding-top: 30px;
+    padding-left: 0;
+}
+
+.footer-main__contacts__item__desc {
+    padding-left: 4.25px;
+}

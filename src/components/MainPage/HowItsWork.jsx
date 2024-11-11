@@ -4,36 +4,36 @@ import computer from "../../assets/svg/computer.svg";
 
 export default function HowItsWork() {
   return (
-    <section className="how-its-work" id="howItsWork">
+    <section className="how-it-works" id="howItWorks">
       <div className="container">
-        <div className="how-its-work__title">
-          <a href="#" className="how-its-work__link">
+        <div className="how-it-works__head-wrapper">
+          <h2  className="how-it-works__title">
             Как это работает
-          </a>
-          <button className="how-its-work__know-more">УЗНАТЬ БОЛЬШЕ</button>
+          </h2>
+          <button className="how-it-works__button">УЗНАТЬ БОЛЬШЕ</button>
         </div>
-        <div className="how-its-work__wrapper">
-          <div className="how-its-work__options">
-            <div className="how-its-work__option1">
-              <img src={website} alt="Удобный заказ на сайте" />
+        <div className="how-it-works__wrapper">
+          <div className="how-it-works__options">
+            <div className="how-it-works__option1">
+              <img src={website} alt="image" />
             </div>
-            <span className="how-its-work__option-description">
+            <span className="how-it-works__option-description">
               Удобный заказ на сайте
             </span>
           </div>
-          <div className="how-its-work__options">
-            <div className="how-its-work__option2">
-              <img src={office} alt="Нет необходимости ехать в офис" />
+          <div className="how-it-works__options">
+            <div className="how-it-works__option2">
+              <img src={office} alt="image" />
             </div>
-            <span className="how-its-work__option-description">
+            <span className="how-it-works__option-description">
               Нет необходимости ехать в офис
             </span>
           </div>
-          <div className="how-its-work__options">
-            <div className="how-its-work__option3">
-              <img src={computer} alt="Огромный выбор направлений" />
+          <div className="how-it-works__options">
+            <div className="how-it-works__option3">
+              <img src={computer} alt="image" />
             </div>
-            <span className="how-its-work__option-description">
+            <span className="how-it-works__option-description">
               Огромный выбор направлений
             </span>
           </div>
