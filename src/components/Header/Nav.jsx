@@ -4,7 +4,7 @@ export default function Navigator() {
   return (
     <>
       <div className="header__logo container">
-        <span className="header__logo__logo">Лого</span>
+        <span className="header__logo">Лого</span>
       </div>
 
       <nav className="header__navbar">

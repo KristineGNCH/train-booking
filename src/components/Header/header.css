@@ -9,15 +9,19 @@
 }
 
 .header__logo {
-    margin-top: 15px;
+    display: block;
     height: 64px;
     line-height: 64px;
+
+    padding-top: 15px;
 }
 
-.header__logo__logo, .footer__logo__logo {
+.footer__logo {
+    padding-top: 22px;
 
-    width: 104px;
-    height: 49px;
+}
+
+.header__logo, .footer__logo {
 
     font-style: normal;
     font-weight: 900;
@@ -53,7 +57,7 @@
 .nav-link {
     max-width: 1919px;
     font-family: "Roboto", sans-serif;
-;
+    ;
     font-style: normal;
     font-weight: 300;
     font-size: 30px;
@@ -119,7 +123,7 @@
 .ticket-form__title {
     width: 231px;
     height: 43px;
-    
+
 
     font-family: 'Roboto';
     font-style: normal;
@@ -134,19 +138,6 @@
 .ticket-form__title:first-child {
     padding-top: 79px;
 
-}
-
-.header-form__items {
-    display: flex;
-    flex-grow: 1;
-
-    margin-top: 15px;
-}
-
-.header-form__item {
-    width: 100%;
-    max-width: 322px;
-    position: relative;
 }
 
 .ticket-form__input {
@@ -183,18 +174,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
     align-self: center;
 
-}
-
-
-.header-form__submit {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
-    margin-top: 90px;
-    margin-bottom: 60px;
-    padding: 0;
-    font-size: 100%;
-    vertical-align: baseline;
 }
 
 
@@ -296,4 +275,49 @@ datalist option:hover, datalist option:focus {
 
     padding-left: 42px;
     padding-right: 42px;
+}
+
+.header-form__submit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    margin-top: 90px;
+    margin-bottom: 60px;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.header-form__items {
+    display: flex;
+    flex-grow: 1;
+
+    margin-top: 15px;
+}
+
+.header-form__item {
+    width: 100%;
+    max-width: 322px;
+    position: relative;
+}
+
+.find-tickets__button {
+    background-color: #FFA800;
+    width: 323px;
+    height: 60px;
+    top: 865px;
+    left: 1340px;
+    gap: 0px;
+    border-radius: 5px 0px 0px 0px;
+    opacity: 0px;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-transform: uppercase;
+
 }

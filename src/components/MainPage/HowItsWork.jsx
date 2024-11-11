@@ -6,13 +6,13 @@ export default function HowItsWork() {
   return (
     <section className="how-its-work" id="howItsWork">
       <div className="container">
-        <div className="how-its-work__part1">
+        <div className="how-its-work__title">
           <a href="#" className="how-its-work__link">
             Как это работает
           </a>
           <button className="how-its-work__know-more">УЗНАТЬ БОЛЬШЕ</button>
         </div>
-        <div className="how-its-work__part2">
+        <div className="how-its-work__wrapper">
           <div className="how-its-work__options">
             <div className="how-its-work__option1">
               <img src={website} alt="Удобный заказ на сайте" />
