@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { setOneParam } from "../../reducers/routesParamsSlice";
 
-export default function TrainVar({ count }) {
+export default function TrainsHead({ count }) {
   const dispatch = useDispatch();
 
   const onHandleSort = (evt) => {
@@ -9,6 +9,7 @@ export default function TrainVar({ count }) {
       if (evt.target.value === "time") {
         dispatch(setOneParam({ key: "sort", value: "time" }));
       }
+      // не могу использовать "по цене", т.к. API отдает ошибку
       if (evt.target.value === "price") {
         dispatch(setOneParam({ key: "sort", value: "duration" }));
       }

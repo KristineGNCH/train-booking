@@ -12,7 +12,11 @@ import {
 export default function TrainItem({ item }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  //console.log(item.departure._id)
   const setParamsinStore = (id, item) => {
+    // console.log(item)
+    // event.preventDefault()
     const request = {
       req: {
         id: id,
@@ -20,6 +24,8 @@ export default function TrainItem({ item }) {
       data: item,
     };
     dispatch(setSeatsParams(request));
+
+    //navigate("/seatsselect");
   };
 
   return (

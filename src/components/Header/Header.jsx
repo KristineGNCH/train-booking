@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 
 import { setParams } from "../../reducers/routesParamsSlice.js";
-import { resetCoach } from "../../reducers/coachParamsSlice.js";
+import { resetVans } from "../../reducers/vansParamsSlice.js";
 import { resetRoutes } from "../../reducers/routesParamsSlice.js";
 import { resetSeats } from "../../reducers/seatsParamsSlice.js";
 import Navigator from "./Nav";
@@ -48,7 +48,7 @@ export default function Header() {
 
   const setParamsinStore = (evt) => {
     evt.preventDefault();
-    dispatch(resetCoach());
+    dispatch(resetVans());
     dispatch(resetRoutes());
     dispatch(resetSeats());
     const request = {
@@ -69,7 +69,7 @@ export default function Header() {
   }
 
   return (
-    <header className="header">
+    <header className="header" id="header">
       <Navigator />
 
       <div className="header-container container">

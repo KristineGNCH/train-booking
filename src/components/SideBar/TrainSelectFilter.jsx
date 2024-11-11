@@ -2,26 +2,26 @@ import { useDispatch } from "react-redux";
 import PriceFilter from "./PriceFilter";
 
 import { setOneParam } from "../../reducers/routesParamsSlice";
-import { coachClasses } from "../../service/dataTransform";
+import { vanClasses } from "../../service/dataTransform";
 import { DepartureFilter } from "./DepartureFilter";
 
 export default function TrainSelectFilter() {
   const dispatch = useDispatch();
 
-  const handleChangecoachType = (evt) => {
-    if (evt.target.value === coachClasses.second) {
+  const handleChangeVanType = (evt) => {
+    if (evt.target.value === vanClasses.second) {
       evt.target.checked
         ? dispatch(setOneParam({ key: "have_second_class", value: true }))
         : dispatch(setOneParam({ key: "have_second_class", value: false }));
-    } else if (evt.target.value === coachClasses.first) {
+    } else if (evt.target.value === vanClasses.first) {
       evt.target.checked
         ? dispatch(setOneParam({ key: "have_first_class", value: true }))
         : dispatch(setOneParam({ key: "have_first_class", value: false }));
-    } else if (evt.target.value === coachClasses.third) {
+    } else if (evt.target.value === vanClasses.third) {
       evt.target.checked
         ? dispatch(setOneParam({ key: "have_third_class", value: true }))
         : dispatch(setOneParam({ key: "have_third_class", value: false }));
-    } else if (evt.target.value === coachClasses.fourth) {
+    } else if (evt.target.value === vanClasses.fourth) {
       evt.target.checked
         ? dispatch(setOneParam({ key: "have_fourth_class", value: true }))
         : dispatch(setOneParam({ key: "have_fourth_class", value: false }));
@@ -76,7 +76,7 @@ export default function TrainSelectFilter() {
                 <label className="switch">
                   <input
                     type="checkbox"
-                    value={coachClasses.second}
+                    value={vanClasses.second}
                     onClick={(evt) => handleChangecoachType(evt)}
                   />
                   <span className="slider round"></span>
@@ -90,7 +90,7 @@ export default function TrainSelectFilter() {
                 <label className="switch">
                   <input
                     type="checkbox"
-                    value={coachClasses.third}
+                    value={vanClasses.third}
                     onClick={(evt) => handleChangecoachType(evt)}
                   />
                   <span className="slider round"></span>
@@ -105,7 +105,7 @@ export default function TrainSelectFilter() {
                   <input type="checkbox" />
                   <span
                     className="slider round"
-                    value={coachClasses.fourth}
+                    value={vanClasses.fourth}
                     onClick={(evt) => handleChangecoachType(evt)}
                   ></span>
                 </label>
@@ -118,7 +118,7 @@ export default function TrainSelectFilter() {
                 <label className="switch">
                   <input
                     type="checkbox"
-                    value={coachClasses.first}
+                    value={vanClasses.first}
                     onClick={(evt) => handleChangecoachType(evt)}
                   />
                   <span className="slider round"></span>

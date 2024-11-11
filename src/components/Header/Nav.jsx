@@ -13,7 +13,7 @@ export default function Navigator() {
             <HashLink smooth to="/#aboutUs">
               <li className="nav-link">О нас </li>
             </HashLink>
-            <HashLink smooth to="/#howItsWork">
+            <HashLink smooth to="/#howItWorks">
               <li className="nav-link">Как это работает</li>
             </HashLink>
             <HashLink smooth to="/#feedbacks">

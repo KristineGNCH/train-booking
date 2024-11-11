@@ -4,11 +4,6 @@ import CoachClass from "./CoachType";
 
 export default function CoachItem({ item }) {
 
-  const coachType = useSelector((state) => state.coachParamsSlice.coachType);
-  const coachChecked = useSelector((state) => state.coachParamsSlice.coachChecked);
-  const filterCoachList = useSelector(
-    (state) => state.coachParamsSlice.filterCoachList
-  );
 
   return (
     <div className="seat-select-form">

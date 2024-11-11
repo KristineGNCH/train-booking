@@ -1,5 +1,6 @@
 import { postEmail } from "../../api/api";
 import { createRef } from "react";
+import { HashLink } from "react-router-hash-link";
 import "./Footer.css";
 
 import phone from "../../assets/svg/Phone.svg";
@@ -22,6 +23,7 @@ export default function Footer() {
   };
 
   return (
+    
     <footer className="footer">
       <div className="footer-wrapper container">
         <div className="footer-main__contacts" id="contacts">
@@ -132,7 +134,9 @@ export default function Footer() {
       <div className="footer-logo container">
         <div className="footer__logo">Лого</div>
         <div className="logo-up">
+        <HashLink smooth to="/#header">
           <img src={up} alt="button-UP" className="icon-active" />
+          </HashLink>
         </div>
         <div className="copyright">2018 WEB</div>
       </div>

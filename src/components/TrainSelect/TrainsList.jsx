@@ -1,10 +1,14 @@
 import { useSelector } from "react-redux";
-import TrainItem from "./Train";
+import TrainItem from "./TrainItem";
 
 export default function TrainsList() {
   const printTrainsList = useSelector(
     (state) => state.trainsParamsSlice.printTrainsList
   );
+  const trainsList = useSelector((state) => state.trainsParamsSlice.trainsList);
+  //  console.log(printTrainsList)
+  //   sortByPrice(printTrainsList)
+  //
 
   return (
     <section className="trains-list-container">
