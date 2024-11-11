@@ -63,14 +63,14 @@ export default function Footer() {
                 src={point}
                 alt="image"
               />
-              <span className="footer-main__contacts__item__adress">
+              <span className="footer-main__contacts__item__desc adress">
                 г. Москва ул. Московская 27-35 555 555
               </span>
             </li>
           </ul>
         </div>
         <div className="footer-main__subscribe">
-          <h3 className="footer-main_head">Подписка</h3>
+          <h3 className="footer-main_title">Подписка</h3>
           <div className="footer-main__subscribe__item">
             <form
               action="footer-main__subscribe__form"
@@ -84,7 +84,7 @@ export default function Footer() {
               >
                 Будьте в курсе событий
               </label>
-              <div className="input-btn-wrapper">
+              <div className="input-button-wrapper">
                 <input
                   type="email"
                   className="footer-main__subscribe__form-input"
@@ -92,7 +92,7 @@ export default function Footer() {
                   ref={ref}
                 />
                 <button
-                  className="footer-main__subscribe__send btn-footer"
+                  className="footer-main__subscribe__send button-footer"
                   onClick={(evt) => onPost(evt)}
                 >
                   ОТПРАВИТЬ
@@ -130,7 +130,7 @@ export default function Footer() {
       <div className="footer-main__line"></div>
 
       <div className="footer-logo container">
-        <div className="footer__logo__logo">Лого</div>
+        <div className="footer__logo">Лого</div>
         <div className="logo-up">
           <img src={up} alt="button-UP" className="icon-active" />
         </div>

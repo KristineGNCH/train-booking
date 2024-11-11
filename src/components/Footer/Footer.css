@@ -14,7 +14,7 @@
     flex-direction: column;
     gap: 30px;
 
-    color: #FFF;
+    color: #FFFF;
 }
 
 .footer-main_title {
@@ -25,7 +25,16 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    color: #FFFF;
 
+    width: 424px;
+    height: 61px;
+    padding-top: 52px;
+    padding-bottom: 6px;
+}
+
+.footer-main__contacts__items {
+    padding: 0;
 }
 
 .footer-main__contacts__item:not(:first-child) {
@@ -34,5 +43,108 @@
 }
 
 .footer-main__contacts__item__desc {
-    padding-left: 4.25px;
+    padding-left: 36px;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.adress {
+    width: 346px;
+}
+
+.footer-main__subscribe__item {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+
+.input-button-wrapper {
+    margin-top: 15px;
+    margin-bottom: 44px;
+}
+
+.footer-main__subscribe__form-input {
+    width: 447px;
+    height: 26px;
+    border-radius: 3px 0px 0px 0px;
+    margin-right: 33px;
+    padding: 17px 21px 17px 21px;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.button-footer {
+    width: 169px;
+    height: 60px;
+    border: 1px solid #E5E5E5;
+    padding: 15px 17px 15px 17px;
+
+    background-color: transparent;
+    color: #E5E5E5;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.social-media-list {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    padding-top: 28px;
+}
+
+.social-media-list__item:not(:first-child) {
+    padding-left: 48.9px;
+}
+
+.footer-main__line {
+    border: 1px solid #E5E5E5;
+    width: 100vw;
+
+    margin-top: 52px;
+    margin-bottom: 26px;
+}
+
+.footer-logo {
+    margin-right: 257px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    width: 111px;
+    height: 33px;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28.13px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
 }
