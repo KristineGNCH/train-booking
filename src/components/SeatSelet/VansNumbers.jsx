@@ -15,7 +15,6 @@ export default function VansNumbers() {
       .checked;
     return status ? "active-wagon-number" : "wagon-number";
   };
-  //Поскольку номеров вагонов в API нет, нумерацию придумала сама
 
   return (
     <div className="wagon-numbers">

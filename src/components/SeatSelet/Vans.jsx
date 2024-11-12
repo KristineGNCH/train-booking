@@ -17,8 +17,6 @@ export default function Vans() {
       </div>
     );
   }
-  // console.log("filterVansList из стейта");
-  // console.log(filterVansList);
 
   return (
     <>

@@ -15,8 +15,9 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
+
         <Route
-          path="trainselect"
+          path="search"
           element={
             <Layout
               main={<TrainSelect />}
@@ -27,7 +28,7 @@ function App() {
         ></Route>
 
         <Route
-          path="seatsselect"
+          path="results"
           element={
             <Layout
               main={<SeatsSelect />}
@@ -38,12 +39,12 @@ function App() {
         ></Route>
 {/* 
         <Route
-          path="passengers"
+          path="boarding"
           element={<Layout main={<Passengers />} sidebar={<TicketInfo />} />}
         ></Route>
 
         <Route
-          path="personaldata"
+          path="step1"
           element={<Layout main={<PersonalData />} sidebar={<TicketInfo />} />}
         ></Route>
 
@@ -52,7 +53,7 @@ function App() {
           element={<Layout main={<Confirmation />} sidebar={<TicketInfo />} />}
         ></Route>
 
-        <Route path="successfulorder" element={<Successfulorder />}></Route> */}
+        <Route path="bookingsuccess" element={<Successfulorder />}></Route> */}
 
       </Routes>
     </div>

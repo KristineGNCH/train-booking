@@ -9,7 +9,6 @@ export default function TrainsHead({ count }) {
       if (evt.target.value === "time") {
         dispatch(setOneParam({key: 'sort', value: "time"}));
       }
-      // не могу использовать "по цене", т.к. API отдает ошибку 
       if (evt.target.value === "price") {
         dispatch(setOneParam({key: 'sort', value: "duration"}));
       }

@@ -29,17 +29,6 @@ const seatsParamsSlice = createSlice({
         state.req.id = action.payload.req.id
         state.data.item  = action.payload.data
     },
-    // setSeatsParams: (prevState, action) => ({
-    //   ...prevState,
-    //   req: {
-    //     ...prevState.reg,
-    //     id: action.payload.req.id,
-    //   },
-    //   data: {
-    //     ...prevState.data,
-    //     item: action.payload.data,
-    //   },
-    // }),
     setSelectSeats: (prevState, action) => ({
       ...prevState,
       seats: [
@@ -90,7 +79,7 @@ const seatsParamsSlice = createSlice({
         payWay: {
           ...prevState.personalData.personalData,
           payMethod: action.payload,
-          //online: action.payload.online,
+
         },
       },
     }),

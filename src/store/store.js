@@ -13,7 +13,6 @@ import {
   REGISTER,
 } from "redux-persist";
 
-// import thunk from "redux-thunk";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { api } from "../api/api";
 import routesParamsSlice from "../reducers/routesParamsSlice";
