@@ -2,14 +2,14 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 
 import { setParams } from "../../reducers/routesParamsSlice.js";
 import { resetVans } from "../../reducers/vansParamsSlice.js";
 import { resetRoutes } from "../../reducers/routesParamsSlice.js";
 import { resetSeats } from "../../reducers/seatsParamsSlice.js";
-import Navigator from "./Nav";
+import Nav from "./Nav";
 import Datalist from "./Datalist";
 
 import "react-calendar/dist/Calendar.css";
@@ -70,7 +70,7 @@ export default function Header() {
 
   return (
     <header className="header" id="header">
-      <Navigator />
+      <Nav />
 
       <div className="header-container container">
         <div className="header__slogan">
@@ -128,9 +128,8 @@ export default function Header() {
               <div className="header-form__items">
                 <div className="header-form__item">
                   <div className="datepicker">
-                    
                     <div className="datepicker__wrapper">
-                    <Calendar onChange={onChange} value={value} />
+                      <Calendar onChange={onChange} value={value} />
                     </div>
                   </div>
                   <img
@@ -140,9 +139,9 @@ export default function Header() {
                   />
                 </div>
                 <div className="rotate">
-                <div className="rotate">
-                  <img src={rotate} alt="image" />
-                </div>
+                  <div className="rotate">
+                    <img src={rotate} alt="image" />
+                  </div>
                 </div>
                 <div className="header-form__item">
                   <div className="datepicker">

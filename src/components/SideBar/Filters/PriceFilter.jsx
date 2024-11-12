@@ -2,7 +2,7 @@ import React from "react";
 import Draggable from "react-draggable";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setOneParam } from "../../reducers/routesParamsSlice";
+import { setOneParam } from "../../../reducers/routesParamsSlice";
 
 export default function PriceFilter() {
   const dispatch = useDispatch();
@@ -49,6 +49,7 @@ export default function PriceFilter() {
           <div className="circle-1" ref={nodeRef}></div>
         </Draggable>
         <div className="line-gray"></div>
+        {/* <div className="line-colored" style={{left: "12px", right: "135px"}}></div> */}
         <Draggable
           nodeRef={nodeRef}
           axis="x"
@@ -65,6 +66,7 @@ export default function PriceFilter() {
         <div className="limit-cost" style={{ left: deltaZ - 40 }}>
           {price_to}
         </div>
+        {/* <div className="max-cost">15000</div> */}
       </div>
     </div>
   );

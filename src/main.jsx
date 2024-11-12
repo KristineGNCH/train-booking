@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
-import "bootstrap-icons/font/bootstrap-icons.css";
 
 import App from "./App.jsx";
 import store from "./store/store.js";

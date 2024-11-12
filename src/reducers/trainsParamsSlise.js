@@ -15,7 +15,7 @@ const trainsParamsSlice = createSlice({
       reducers: {
       setTrainsResult: (prevState, action) => ({
             ...prevState,
-              trainsList: action.payload,
+              trains: action.payload,
               printTrainsList: sortByTime(action.payload.items)
           }),
       setRequest: (prevState, action) => ({

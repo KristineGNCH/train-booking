@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 
-export default function Navigator() {
+export default function Nav() {
   return (
     <>
       <div className="header__logo container">

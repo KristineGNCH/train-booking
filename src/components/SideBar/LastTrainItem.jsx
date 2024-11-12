@@ -1,5 +1,5 @@
 
-export default function LastTrainsItem({ item }) {
+export default function LastTrainItem({ item }) {
 
     return (
         <li className="overlooked-ticket">

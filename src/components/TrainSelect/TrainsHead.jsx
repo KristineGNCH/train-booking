@@ -7,29 +7,25 @@ export default function TrainsHead({ count }) {
   const onHandleSort = (evt) => {
     if (0 <= evt.target.selectedIndex <= 3) {
       if (evt.target.value === "time") {
-        dispatch(setOneParam({ key: "sort", value: "time" }));
+        dispatch(setOneParam({key: 'sort', value: "time"}));
       }
-      // не могу использовать "по цене", т.к. API отдает ошибку
+      // не могу использовать "по цене", т.к. API отдает ошибку 
       if (evt.target.value === "price") {
-        dispatch(setOneParam({ key: "sort", value: "duration" }));
+        dispatch(setOneParam({key: 'sort', value: "duration"}));
       }
       if (evt.target.value === "duration") {
-        dispatch(setOneParam({ key: "sort", value: "duration" }));
+         dispatch(setOneParam({key: 'sort', value: "duration"}));
       }
     }
   };
 
   const onHandleOffset = (evt) => {
-    if (
-      +evt.target.textContent === 5 ||
-      +evt.target.textContent === 10 ||
-      +evt.target.textContent === 20
-    ) {
-      dispatch(setOneParam({ key: "limit", value: +evt.target.textContent }));
+    if (+evt.target.textContent === 5 || +evt.target.textContent === 10 || +evt.target.textContent === 20) {
+      dispatch(setOneParam({key: 'limit', value: +evt.target.textContent}))
     } else {
-      return;
+      return
     }
-  };
+  }
   return (
     <section className="trains_head">
       <div className="trains-list_section-title">
@@ -51,9 +47,9 @@ export default function TrainsHead({ count }) {
       <div className="trains-list_show-by">
         <p className="show-by">Показывать по:</p>
         <ul className="show-by-list">
-          <li onClick={(evt) => onHandleOffset(evt)}>5</li>
-          <li onClick={(evt) => onHandleOffset(evt)}>10</li>
-          <li onClick={(evt) => onHandleOffset(evt)}>20</li>
+          <li onClick={(evt) => onHandleOffset (evt)}>5</li>
+          <li onClick={(evt) => onHandleOffset (evt)}>10</li>
+          <li onClick={(evt) => onHandleOffset (evt)}>20</li>
         </ul>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setCategory } from "../../reducers/seatsParamsSlice";
 
-export default function SeatsQnty({ data }) {
+export default function SeatsTicketQty({ data }) {
   const dispatch = useDispatch();
   const seatsCheck = useSelector((state) => state.seatsParamsSlice.seats);
   const category = useSelector((state) => state.seatsParamsSlice.category);
@@ -25,23 +25,24 @@ export default function SeatsQnty({ data }) {
 
   return (
     <section>
-      <h2 className="ticket-quantaty-title">Количество билетов</h2>
-      <div className="ticket-quantaty-container">
+      <h2 className="ticket-count-title">Количество билетов</h2>
+      <div className="ticket-count-container">
         <div
-          className={`ticket-quantaty ${styleCount("adult")} adult`}
+          className={`ticket-count ${styleCount("adult")} adult`}
           onClick={() => handleClick("adult")}
         >
-          <div className="quantaty-screen">
+          <div className="count-screen">
+            {/* <!-- тут разместить шаблон {`Взрослых-${props.name.num}`}--> */}
             <p>Взрослых - {seatsCount("adult")}</p>
           </div>
           <p className="seat-description">Можно добавить еще 3 пассажиров</p>
         </div>
 
         <div
-          className={`ticket-quantaty ${styleCount("kids")} kids`}
+          className={`ticket-count ${styleCount("kids")} kids`}
           onClick={() => handleClick("kids")}
         >
-          <div className="quantaty-screen">
+          <div className="count-screen">
             <p>Детских - {seatsCount("kids")}</p>
           </div>
           <p className="seat-description">
@@ -51,12 +52,12 @@ export default function SeatsQnty({ data }) {
         </div>
 
         <div
-          className={`ticket-quantaty ${styleCount(
+          className={`ticket-count ${styleCount(
             "kidsWithoutSeats"
           )} kidsWithoutSeats`}
           onClick={() => handleClick("kidsWithoutSeats")}
         >
-          <div className="quantaty-screen">
+          <div className="count-screen">
             <p>Детских «без места» — {seatsCount("kidsWithoutSeats")}</p>
           </div>
           <p className="seat-description"></p>

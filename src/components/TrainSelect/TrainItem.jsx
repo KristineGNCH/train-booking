@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
 import { setSeatsParams } from "../../reducers/seatsParamsSlice";
 import { NavLink } from "react-router-dom";
 import {
@@ -10,13 +9,9 @@ import {
 } from "../../service/dataTransform";
 
 export default function TrainItem({ item }) {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  //console.log(item.departure._id)
   const setParamsinStore = (id, item) => {
-    // console.log(item)
-    // event.preventDefault()
     const request = {
       req: {
         id: id,
@@ -24,8 +19,6 @@ export default function TrainItem({ item }) {
       data: item,
     };
     dispatch(setSeatsParams(request));
-
-    //navigate("/seatsselect");
   };
 
   return (

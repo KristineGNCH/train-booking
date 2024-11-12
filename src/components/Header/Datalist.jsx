@@ -1,6 +1,6 @@
 import { useGetCitiesQuery } from "../../api/api";
 import Error from "../Modal/Error/Error.jsx";
-import Loading from "../Loading/Loading.jsx";
+import Loading from "../Modal/Loading/Loading.jsx";
 
 export default function Datalist({ arg, onClick }) {
   const { currentData: result, isError, isFetching } = useGetCitiesQuery(arg);

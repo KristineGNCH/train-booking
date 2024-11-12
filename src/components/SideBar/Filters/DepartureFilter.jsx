@@ -1,8 +1,8 @@
 import React from "react";
 import Draggable from "react-draggable";
-import { useState } from "react";
+import {  useState } from "react";
 import { useDispatch } from "react-redux";
-import { setOneParam } from "../../reducers/routesParamsSlice";
+import { setOneParam } from "../../../reducers/routesParamsSlice";
 
 export function DepartureFilter() {
   const dispatch = useDispatch();
@@ -68,12 +68,13 @@ export function DepartureFilter() {
   };
 
   return (
+    <>
     <div className="time-filter">
       <div className="departure_time-filters_container">
         <div className="time-filter_title-container">
           <h2 className="time-filter-main_title">
             <span className="departure-vector">
-              <p>Туда</p>
+              <p style={{ marginLeft: 40 }}>Туда</p>
             </span>
           </h2>
           <span className="closeUP-vector"></span>
@@ -87,17 +88,27 @@ export function DepartureFilter() {
               bounds={{ left: 0, right: 281 }}
               onDrag={handleTimeDeparture}
             >
-              <div className="time-circle-1" ref={nodeRef}></div>
+              <div
+                className="time-circle-1" ref={nodeRef}
+                //style={{ left: "0px" }}
+              ></div>
             </Draggable>
             <div className="timeline-gray "></div>
-
+            {/* <div
+                  className="timeline-colored"
+                  style={{ left: "2px", right: "128px" }}
+                        ></div> */}
             <Draggable
               axis="x"
               nodeRef={nodeRef}
               bounds={{ left: -281, right: 0 }}
               onDrag={handleTimeDepartureTo}
             >
-              <div className="time-circle-2" ref={nodeRef}></div>
+              <div
+                className="time-circle-2"
+                ref={nodeRef}
+                //   style={{ left: "155px" }}
+              ></div>
             </Draggable>
           </div>
           <div className="cost-container time-container">
@@ -110,6 +121,7 @@ export function DepartureFilter() {
             >
               {timeDeparture.to}:00
             </div>
+            {/* <div className="max-cost">24:00</div> */}
           </div>
         </div>
 
@@ -125,6 +137,10 @@ export function DepartureFilter() {
               <div className="time-circle-1" ref={nodeRef}></div>
             </Draggable>
             <div className="timeline-gray"></div>
+            {/* <div
+              className="timeline-colored"
+              style={{ left: "52px", right: "136px" }}
+                      ></div> */}
             <Draggable
               nodeRef={nodeRef}
               axis="x"
@@ -144,9 +160,11 @@ export function DepartureFilter() {
             >
               {timeArrival.to}:00
             </div>
+            {/* <div className="max-cost">24:00</div> */}
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 }
