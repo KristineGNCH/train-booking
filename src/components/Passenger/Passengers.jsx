@@ -75,7 +75,7 @@ export default function Passengers() {
       <section className="passenger-data">
         <div className="passenger-data-header">
           <h2 className="passenger-add-title">Добавить пассажира</h2>
-          <Link to={"/seatsselect"}>
+          <Link to={"/results"}>
             <span className="data-add-vector"></span>
           </Link>
         </div>

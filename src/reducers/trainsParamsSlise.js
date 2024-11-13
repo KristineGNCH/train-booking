@@ -3,37 +3,34 @@ import { sortByTime, sortByPrice, sortByDuration } from "../service/dataTransfor
 import { makeArgs } from "../service/dataTransform.js";
 
 const initialState = {
-    trainsList: [],
+    trainsList: [], // массив объектов поездов
     printTrainsList: [],
     request: ''
 };
 
-
 const trainsParamsSlice = createSlice({
     name: "trainsParams",
     initialState,
-      reducers: {
-      setTrainsResult: (prevState, action) => ({
+    reducers: {
+        setTrainsResult: (prevState, action) => ({
             ...prevState,
-              trains: action.payload,
-              printTrainsList: sortByTime(action.payload.items)
-          }),
-      setRequest: (prevState, action) => ({
+            trainsList: action.payload.items,
+            printTrainsList: sortByTime(action.payload.items),
+        }),
+        setRequest: (prevState, action) => ({
             ...prevState,
-              request: makeArgs() 
-          }),
-      setSortByPriceTrains: (prevState) => ({
+            request: makeArgs(),
+        }),
+        setSortByPriceTrains: (prevState) => ({
             ...prevState,
-              printTrainsList: sortByPrice(prevState.trainsList.items)
-          }),
-      setSortByDurationTrains: (prevState) => ({
+            printTrainsList: sortByPrice(prevState.trainsList),
+        }),
+        setSortByDurationTrains: (prevState) => ({
             ...prevState,
-              printTrainsList: sortByDuration(prevState.trainsList.items)
-          })
-      }
-  });
-  
-  export const { setTrainsResult,
-      setSortByTimeTrains, setSortByPriceTrains, setSortByDurationTrains 
-  } = trainsParamsSlice.actions;
-  export default trainsParamsSlice.reducer;
+            printTrainsList: sortByDuration(prevState.trainsList),
+        }),
+    }
+});
+
+export const { setTrainsResult, setSortByTimeTrains, setSortByPriceTrains, setSortByDurationTrains } = trainsParamsSlice.actions;
+export default trainsParamsSlice.reducer;

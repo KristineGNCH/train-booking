@@ -7,7 +7,8 @@ import Layout from "./components/Layout";
 import TrainSelect from "./components/TrainSelect/TrainSelect";
 import TrainSelectFilter from "./components/SideBar/Filters/TrainSelectFilter";
 import SideBar from "./components/SideBar/SideBar";
-import SeatsSelect from './components/SeatSelet/SeatsSelect'
+import SeatsSelect from "./components/SeatSelet/SeatsSelect";
+import Passengers from "./components/Passenger/Passengers";
 
 
 function App() {
@@ -15,7 +16,6 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
-
         <Route
           path="search"
           element={
@@ -37,25 +37,24 @@ function App() {
             />
           }
         ></Route>
-{/* 
+        {/* {}
         <Route
           path="boarding"
-          element={<Layout main={<Passengers />} sidebar={<TicketInfo />} />}
+          element={<Layout main={<Passengers />} sidebar={<SideBar />} />}
         ></Route>
 
         <Route
           path="step1"
-          element={<Layout main={<PersonalData />} sidebar={<TicketInfo />} />}
+          element={<Layout main={<PersonalData />} sidebar={<SideBar />} />}
         ></Route>
-
         <Route
           path="confirmation"
-          element={<Layout main={<Confirmation />} sidebar={<TicketInfo />} />}
+          element={<Layout main={<Confirmation />} sidebar={<SideBar />} />}
         ></Route>
-
         <Route path="bookingsuccess" element={<Successfulorder />}></Route> */}
-
+      
       </Routes>
+      
     </div>
   );
 }

@@ -6,7 +6,6 @@ export default function TrainsList() {
   
 
   const printTrainsList = useSelector(state => state.trainsParamsSlice.printTrainsList)
-  const trainsList = useSelector(state => state.trainsParamsSlice.trainsList)
 
   return (
     <section className="trains-list-container">
