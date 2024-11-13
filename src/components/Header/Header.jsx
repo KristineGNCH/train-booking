@@ -27,8 +27,8 @@ export default function Header() {
 
   const [from_city_id, setFrom_city_id] = useState("");
   const [to_city_id, setTo_city_id] = useState("");
-  const [dateTo] = useState("");
-  const [dateBack] = useState("");
+  const [dateTo, setDateTo] = useState("");
+  const [dateBack, setDateBack] = useState("");
 
   const handleChangeFrom = (evt) => {
     setValueFrom(evt.target.value);
@@ -36,6 +36,14 @@ export default function Header() {
 
   const handleChangeTo = (evt) => {
     setValueTo(evt.target.value);
+  };
+
+  const handledDateTo = (evt) => {
+    setDateTo(evt.target.value);
+  };
+
+  const handledDateBack = (evt) => {
+    setDateBack(evt.target.value);
   };
 
   const setIdFrom = (id) => {
@@ -59,14 +67,8 @@ export default function Header() {
     };
     dispatch(setParams(request));
 
-    navigate("/trainselect");
+    navigate("/search");
   };
-
-  const [value, setValue] = useState(new Date());
-
-  function onChange(nextValue) {
-    setValue(nextValue);
-  }
 
   return (
     <header className="header" id="header">
@@ -128,9 +130,21 @@ export default function Header() {
               <div className="header-form__items">
                 <div className="header-form__item">
                   <div className="datepicker">
-                    <div className="datepicker__wrapper">
-                      <Calendar onChange={onChange} value={value} />
-                    </div>
+                    <input
+                      type="date"
+                      className="ticket-form__input departure-date"
+                      placeholder="ДД/ММ/ГГ"
+                      onChange={handledDateTo}
+                      required
+                    />
+                    <div
+                      className="datepicker__wrapper"
+                      style={{
+                        zIndex: 9999,
+                        position: "absolute",
+                        display: "none",
+                      }}
+                    ></div>
                   </div>
                   <img
                     className="header-form__icon"
@@ -145,8 +159,21 @@ export default function Header() {
                 </div>
                 <div className="header-form__item">
                   <div className="datepicker">
-                    <Calendar onChange={onChange} value={value} />
-                    <div className="datepicker__wrapper"></div>
+                    <input
+                      type="date"
+                      className="ticket-form__input departure-date-back right"
+                      placeholder="ДД/ММ/ГГ"
+                      onChange={handledDateBack}
+                      // required
+                    />
+                    <div
+                      className="datepicker__wrapper"
+                      style={{
+                        zIndex: 9999,
+                        position: "absolute",
+                        display: "none",
+                      }}
+                    ></div>
                   </div>
                   <img
                     className="header-form__icon"

@@ -1,9 +1,9 @@
-import TrainsHead from '../../components/TrainSelect/TrainsHead'
+import TrainsHead from './TrainsHead'
 import { makeArgs } from '../../service/dataTransform';
-import TrainsList from "../../components/TrainSelect/TrainsList";
-import Pagination from "../../components/TrainSelect/Pagination";
-import Error from '../../components/Modal/Error/Error'
-import Loading from '../../components/Modal/Loading/Loading'
+import TrainsList from "./TrainsList";
+import Pagination from "./Pagination";
+import Error from '../Modal/Error/Error'
+import Loading from '../Modal/Loading/Loading'
 import { setTrainsResult } from '../../reducers/trainsParamsSlise';
 import { useDispatch, useSelector } from "react-redux"
 import { useGetRoutesQuery } from "../../api/api"

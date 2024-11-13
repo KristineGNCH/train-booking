@@ -46,7 +46,7 @@ export default function Passengers() {
     });
     arr = arr.filter((elem) => elem === "false");
     if (arr === -1 || arr.length < 1) {
-      navigate("/personaldata");
+      navigate("/boarding");
     } else {
       alert("Не заполнены даныне на всех пассажиров");
     }
