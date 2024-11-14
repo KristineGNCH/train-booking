@@ -93,19 +93,19 @@
 .coupe-vector {
     width: 17px;
     height: 17px;
-    background: url(../img/icons/css_sprites.png) -839px -193px;
+    background: url(../../assets/svg/Coupe.svg);
 }
 
 .platzKarte-vector {
     width: 17px;
     height: 17px;
-    background: url(../img/icons/css_sprites.png) -839px -136px;
+    background: url(../../assets/svg/Economy.svg);
 }
 
 .seat-vector {
     width: 14px;
     height: 23px;
-    background: url(../img/icons/css_sprites.png) -785px -160px;
+    background: url(../../assets/svg/sitting-wagon.svg);
 }
 
 .seat-vector p {
@@ -115,19 +115,19 @@
 .luxury-vector {
     width: 22px;
     height: 20px;
-    background: url(../img/icons/css_sprites.png) -208px -680px;
+    background: url(../../assets/svg/Luxe.svg);
 }
 
 .wifi-vector {
     width: 24px;
     height: 19px;
-    background: url(../img/icons/css_sprites.png) -292px -550px;
+    background: url(../../assets/svg/WiFi.svg);
 }
 
 .express-vector {
     width: 20px;
     height: 20px;
-    background: url(../img/icons/css_sprites.png) -270px -680px;
+    background: url(../../assets/svg/Express.svg);
 }
 
 .switch {
@@ -360,8 +360,7 @@ input:checked+.slider:before {
     width: 32px;
     height: 26px;
     background-color: #ffa800;
-    background-image: url(../img/icons/css_sprites.png);
-    background-position: -830px -241px;
+    background-image: url(../../assets/svg/ArrowRightOrange.svg);
     border-radius: 5px;
     transform: matrix(-1, 0, 0, 1, 0, 0);
     margin: 0 9px 0 0;
@@ -371,8 +370,7 @@ input:checked+.slider:before {
     width: 32px;
     height: 26px;
     background-color: #ffa800;
-    background-image: url(../img/icons/css_sprites.png);
-    background-position: -830px -241px;
+    background-image: url(../../assets/svg/ArrowLeftOrange.svg);
     border-radius: 5px;
     margin: 0 9px 0 0;
 }
@@ -380,7 +378,7 @@ input:checked+.slider:before {
 .closeUP-vector {
     width: 20px;
     height: 20px;
-    background: url(../img/icons/css_sprites.png) -390px -680px;
+    background-image: url(../../assets/svg/Cross.svg);
     margin: 38px 18px 0 0px;
 }
 
@@ -462,7 +460,6 @@ input:checked+.slider:before {
     display: flex;
     width: 92px;
     height: 20px;
-    /* background: url(../img/icons/css_sprites.png) -20px -550px; */
 }
 
 .comfort-props_vector_item {
@@ -507,7 +504,7 @@ input:checked+.slider:before {
     width: 20px;
     height: 25px;
     margin-left: 5px;
-    background: url(../img/icons/css_sprites.png);
+    background: url(../../assets/svg/ruble.svg);
 }
 
 .trains {
@@ -604,7 +601,7 @@ input:checked+.slider:before {
     display: flex;
     width: 86px;
     height: 86px;
-    background: url(../img/icons/css_sprites.png) -20px -424px;
+    background-image: url(../../assets/svg/Train.svg);
     margin: auto;
 }
 
@@ -648,7 +645,7 @@ input:checked+.slider:before {
     display: flex;
     width: 24px;
     height: 8px;
-    background: url(../img/icons/css_sprites.png) -839px -250px;
+    background-image: url(../../assets/svg/ArrowRightGray.svg);
     margin-left: 5px;
 }
 
@@ -712,7 +709,7 @@ input:checked+.slider:before {
     display: flex;
     width: 30px;
     height: 20px;
-    background: url(../img/icons/css_sprites.png) -152px -550px;
+    background-image: url(../../assets/svg/Time.svg);
     margin-top: 5px;
 }
 
@@ -720,7 +717,7 @@ input:checked+.slider:before {
     display: flex;
     width: 30px;
     height: 20px;
-    background: url(../img/icons/css_sprites.png) -222px -550px;
+    background-image: url(../../assets/svg/Time.svg);
     margin-top: 5px;
 }
 

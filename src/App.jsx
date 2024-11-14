@@ -9,13 +9,16 @@ import TrainSelectFilter from "./components/SideBar/Filters/TrainSelectFilter";
 import SideBar from "./components/SideBar/SideBar";
 import SeatsSelect from "./components/SeatSelet/SeatsSelect";
 import Passengers from "./components/Passenger/Passengers";
-
+import PersonalData from "./components/PersonalData/PersonalData"; // Убедитесь, что этот импорт существует
+import Confirmation from "./components/Confirmation/Confirmation"; // Убедитесь в существовании этого импорта
+import OrderSuccess from "./components/OrderSuccess/OrderSuccess"; // Исправьте имя компонента, если требуется
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<MainPage />}></Route>
+        <Route path="/" element={<MainPage />} />
+
         <Route
           path="search"
           element={
@@ -25,7 +28,7 @@ function App() {
               sidebarBottom={<SideBar />}
             />
           }
-        ></Route>
+        />
 
         <Route
           path="results"
@@ -36,25 +39,25 @@ function App() {
               sidebarBottom={<SideBar />}
             />
           }
-        ></Route>
-        {/* {}
-        <Route
-          path="boarding"
-          element={<Layout main={<Passengers />} sidebar={<SideBar />} />}
-        ></Route>
+        />
 
         <Route
-          path="step1"
+          path="passengers"
+          element={<Layout main={<Passengers />} sidebar={<SideBar />} />}
+        />
+
+        <Route
+          path="personaldata"
           element={<Layout main={<PersonalData />} sidebar={<SideBar />} />}
-        ></Route>
+        />
+
         <Route
           path="confirmation"
           element={<Layout main={<Confirmation />} sidebar={<SideBar />} />}
-        ></Route>
-        <Route path="bookingsuccess" element={<Successfulorder />}></Route> */}
-      
+        />
+
+        <Route path="successfulorder" element={<OrderSuccess />} />
       </Routes>
-      
     </div>
   );
 }

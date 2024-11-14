@@ -199,7 +199,7 @@ datalist option:hover, datalist option:focus {
 }
 
 .header-trainselect-image {
-    background-image: url('../../img/TrainSelect_header-background.png');
+    background-image: url(../../assets/img/mainbanner2.jpg);
     background-color: #292929;
     background-repeat: no-repeat;
     background-size: cover;

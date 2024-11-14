@@ -13,7 +13,7 @@ const initialState = {
     middleName: "",
     phone: "",
     email: "",
-    payWay: {
+    payMethod: {
       payMethod: "",
       online: "card",
     },
@@ -76,7 +76,7 @@ const seatsParamsSlice = createSlice({
       ...prevState,
       personalData: {
         ...prevState.personalData,
-        payWay: {
+        payMethod: {
           ...prevState.personalData.personalData,
           payMethod: action.payload,
 
@@ -87,7 +87,7 @@ const seatsParamsSlice = createSlice({
       ...prevState,
       personalData: {
         ...prevState.personalData,
-        payWay: {
+        payMethod: {
           ...prevState.personalData.personalData,
           payMethod: "",
           online: "",
@@ -98,8 +98,8 @@ const seatsParamsSlice = createSlice({
       ...prevState,
       personalData: {
         ...prevState.personalData,
-        payWay: {
-          ...prevState.personalData.payWay,
+        payMethod: {
+          ...prevState.personalData.payMethod,
           online: action.payload,
         },
       },

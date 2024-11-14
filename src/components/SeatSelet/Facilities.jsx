@@ -23,8 +23,8 @@ export function Facilities({ item }) {
           data-title="Белье"
           className={
             item.coach.is_linens_included
-              ? "facilities-vector linens included linens-included"
-              : "facilities-vector linens included"
+              ? "facilities-vector bedShits included bedShits-included"
+              : "facilities-vector bedShits included"
           }
         ></li>
   

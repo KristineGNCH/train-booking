@@ -27,7 +27,7 @@
   display: flex;
   width: 76px;
   height: 60px;
-  background: url(../../img/icons/departure-vector.png);
+  background: url(../../assets/svg/ArrowOrangeRightBckgrnd.svg);
   margin: 30px 0 0 15px;
 }
 
@@ -74,7 +74,7 @@
   display: flex;
   width: 30px;
   height: 30px;
-  background: url(../../img/icons/css_sprites.png) -709px -590px;
+  background: url(../../assets/svg/Train.svg);
   margin: 45px 0 0 30px;
 }
 
@@ -122,7 +122,7 @@
   margin: auto auto auto 0;
   width: 30px;
   height: 20px;
-  background: url(../../img/icons/css_sprites.png) -152px -550px;
+  background: url(../../assets/svg/Time.svg);
 }
 
 .seats_travel-time-vector-reverse {
@@ -130,7 +130,7 @@
   margin: auto auto auto 0;
   width: 30px;
   height: 20px;
-  background: url(../../img/icons/css_sprites.png) -222px -550px;
+  background: url(../../img/icons/css_sprites.png);
 }
 
 .seats_travel-time {
@@ -143,7 +143,7 @@
   display: flex;
   width: 30px;
   height: 30px;
-  background: url(../../img/icons/css_sprites.png) -709px -520px;
+  background: url(../../assets/svg/Time.svg);
   padding: 0 15px 0 0;
 }
 
@@ -463,22 +463,22 @@
 }
 
 .conditioner {
-  background: url(../../img/icons/css_sprites.png) -80px -675px;
+  background: url(../../assets/svg/airCond.svg);
 }
 
 .wifi {
-  background: url(../../img/icons/css_sprites.png) -626px -673px;
+  background: url(../../assets/svg/WiFi2.svg);
 }
 
-.linens {
-  background: url(../../img/icons/css_sprites.png) -592px -543px;
+.bedShits {
+  background: url(../../assets/svg/bedShits.svg);
 }
 
 .food {
-  background: url(../../img/icons/css_sprites.png) -350px -544px;
+  background: url(../../assets/svg/Cup.svg);
 }
 
-.facilities-vector:hover.conditioner::after, .facilities-vector:hover.wifi::after, .facilities-vector:hover.linens::after, .facilities-vector:hover.food::after {
+.facilities-vector:hover.conditioner::after, .facilities-vector:hover.wifi::after, .facilities-vector:hover.bedShits::after, .facilities-vector:hover.food::after {
   display: flex;
   position: relative;
   top: 40px;
@@ -496,39 +496,39 @@
 }
 
 .conditioner-included {
-  background: url(../../img/icons/css_sprites.png) -140px -674px;
+  background: url(../../assets/svg/airCond.svg);
 }
 
 .facilities-vector:hover.conditioner-included {
-  background: url(../../img/icons/css_sprites.png) -80px -675px;
-  background-color: #FFA800;
+  background: url(../../assets/svg/airCond.svg);
+  fill: #FFA800;
 }
 
 .wifi-included {
-  background: url(../../img/icons/css_sprites.png) -685px -672px;
+  background: url(../../assets/svg/WiFiIncl.svg);
 }
 
 .facilities-vector:hover.wifi-included {
-  background: url(../../img/icons/css_sprites.png) -626px -673px;
-  background-color: #FFA800;
+  background: url(../../assets/svg/WiFiIncl.svg);
+  fill: #FFA800;
 }
 
-.linens-included {
-  background: url(../../img/icons/css_sprites.png) -563px -672px;
+.bedShits-included {
+  background: url(../../assets/svg/bedShits.svg);
 }
 
-.facilities-vector:hover.linens-included {
-  background: url(../../img/icons/css_sprites.png) -592px -543px;
-  background-color: #FFA800;
+.facilities-vector:hover.bedShits-included {
+  background: url(../../assets/svg/bedShits.svg);
+  fill: #FFA800;
 }
 
 .food-included {
-  background: url(../../img/icons/css_sprites.png) -409px -543px;
+  background: url(../../assets/svg/Cup.svg);
 }
 
 .facilities-vector:hover.food-included {
-  background: url(../../img/icons/css_sprites.png) -350px -544px;
-  background-color: #FFA800;
+  background: url(../../assets/svg/Cup.svg);
+  fill: #FFA800;
 }
 
 .included {
@@ -537,39 +537,39 @@
 }
 
 .conditioner-active {
-  background: url(../../img/icons/css_sprites.png) -614px -604px;
+  background: url(../../assets/svg/airCond.svg);
 }
 
 .facilities-vector:hover.conditioner-active {
-  background: url(../../img/icons/css_sprites.png) -80px -675px;
-  background-color: #FFA800;
+  background: url(../../assets/svg/airCond.svg);
+  fill: #FFA800;
 }
 
 .wifi-active {
-  background: url(../../img/icons/css_sprites.png) -13px -738px;
+  background: url(../../assets/svg/WiFiIncl.svg);
 }
 
 .facilities-vector:hover.wifi-active {
-  background: url(../../img/icons/css_sprites.png) -626px -673px;
-  background-color: #FFA800;
+  background: url(../../assets/svg/WiFiIncl.svg);
+  fill: #FFA800;
 }
 
-.linens-active {
-  background: url(../../img/icons/css_sprites.png) -529px -542px;
+.bedShits-active {
+  background: url(../../assets/svg/bedShits.svg);
 }
 
-.facilities-vector:hover.linens-active {
-  background: url(../../img/icons/css_sprites.png) -592px -543px;
+.facilities-vector:hover.bedShits-active {
+  background: url(../../assets/svg/bedShits.svg);
   background-color: #FFA800;
 }
 
 .food-active {
-  background: url(../../img/icons/css_sprites.png) -469px -543px;
+  background: url(../../assets/svg/Cup.svg);
 }
 
 .facilities-vector:hover.food-active {
-  background: url(../../img/icons/css_sprites.png) -350px -544px;
-  background-color: #FFA800;
+  background: url(../../assets/svg/Cup.svg);
+  fill: #FFA800;
 }
 
 .active {
