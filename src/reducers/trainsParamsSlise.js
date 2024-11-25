@@ -3,7 +3,7 @@ import { sortByTime, sortByPrice, sortByDuration } from "../service/dataTransfor
 import { makeArgs } from "../service/dataTransform.js";
 
 const initialState = {
-    trainsList: [], // массив объектов поездов
+    trainsList: [], 
     printTrainsList: [],
     request: ''
 };

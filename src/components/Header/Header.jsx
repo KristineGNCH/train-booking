@@ -164,7 +164,7 @@ export default function Header() {
                       className="ticket-form__input departure-date-back right"
                       placeholder="ДД/ММ/ГГ"
                       onChange={handledDateBack}
-                      // required
+                      required
                     />
                     <div
                       className="datepicker__wrapper"

@@ -40,5 +40,5 @@ export default function TrainSelect() {
     );
   }
 
-  return null; // Возвращайте null или другой элемент если нет поездов
+  return null; 
 }

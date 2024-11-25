@@ -9,9 +9,9 @@ import TrainSelectFilter from "./components/SideBar/Filters/TrainSelectFilter";
 import SideBar from "./components/SideBar/SideBar";
 import SeatsSelect from "./components/SeatSelet/SeatsSelect";
 import Passengers from "./components/Passenger/Passengers";
-import PersonalData from "./components/PersonalData/PersonalData"; // Убедитесь, что этот импорт существует
-import Confirmation from "./components/Confirmation/Confirmation"; // Убедитесь в существовании этого импорта
-import OrderSuccess from "./components/OrderSuccess/OrderSuccess"; // Исправьте имя компонента, если требуется
+import PersonalData from "./components/PersonalData/PersonalData"; 
+import Confirmation from "./components/Confirmation/Confirmation";
+import OrderSuccess from "./components/OrderSuccess/OrderSuccess"; 
 
 function App() {
   return (
