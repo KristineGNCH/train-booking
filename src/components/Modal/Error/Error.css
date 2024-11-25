@@ -1,0 +1,82 @@
+.error-block__wrapper {
+    background-color: #fff;
+    border: 1px solid #C4C4C4;
+    color: #721c24;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 666.31px;
+    height: 505px
+}
+
+.error-block-header {
+    width: 664.92px;
+    height: 107px;
+    margin-bottom: 10px;
+    background-color: #FF3D0061
+}
+
+.error-block-header_exclamation-mark {
+    background: url(../../../assets/svg/exclamation_mark.svg) no-repeat center;
+    margin-bottom: 80px;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+.error-block-title {
+    font-size: 1.5rem;
+    margin: 0
+}
+
+.error-block-main {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-block-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    height: 100%;
+}
+
+.error-block-footer-line {
+    border: 1px solid #928F94;
+    display: block;
+    width: 666.31px;
+    height: 0px
+}
+
+.error-block__button {
+    background-color: #fff;
+    color: #292929;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    margin-top: 43px;
+    padding: 12px 68px 11px 65px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.13px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none
+}
+
+.error-block__button:hover {
+    color: #FFA800;
+    border: 1px solid #FFA800;
+}

@@ -50,7 +50,7 @@ export const api = createApi({
 const postEmail = (email) => {
   let formData = new FormData();
   formData.append("email", email);
-  fetch("https://netology-trainbooking.netoservices.ru/subscribe?", {
+  fetch("https://students.netoservices.ru/fe-diplom/subscribe", {
     body: formData,
     method: "post",
     "Content-Type": "application/x-www-form-urlencoded",

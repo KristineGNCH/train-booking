@@ -13,6 +13,23 @@
     margin-bottom: 150px;
 }
 
+.sidebar-tickets_title {
+    width: 378px;
+    height: 39px;
+    top: 1895px;
+    left: 260px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
 /*filters */
 
 .filters-container {
@@ -357,28 +374,32 @@ input:checked+.slider:before {
 }
 
 .arrival-vector {
-    width: 32px;
-    height: 26px;
-    background-color: #ffa800;
-    background-image: url(../../assets/svg/ArrowRightOrange.svg);
+    width: 30px;
+    height: 20px;
+    background-image: url(../../assets/svg/ArrowLeftOrange.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px;
     transform: matrix(-1, 0, 0, 1, 0, 0);
     margin: 0 9px 0 0;
 }
 
 .departure-vector {
-    width: 32px;
-    height: 26px;
-    background-color: #ffa800;
-    background-image: url(../../assets/svg/ArrowLeftOrange.svg);
+    width: 30px;
+    height: 20px;
+    background-image: url(../../assets/svg/ArrowRightOrange.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 5px;
     margin: 0 9px 0 0;
 }
 
 .closeUP-vector {
-    width: 20px;
-    height: 20px;
+    width: 12px;
+    height: 12px;
     background-image: url(../../assets/svg/Cross.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 38px 18px 0 0px;
 }
 

@@ -9,7 +9,7 @@ const initialState = {
 };
 
 const trainsParamsSlice = createSlice({
-    name: "trainsParams",
+    name: 'trainsParams',
     initialState,
     reducers: {
         setTrainsResult: (prevState, action) => ({

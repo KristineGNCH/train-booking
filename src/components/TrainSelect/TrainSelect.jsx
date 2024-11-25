@@ -12,10 +12,12 @@ import "./TrainSelect.css";
 
 export default function TrainSelect() {
   const dispatch = useDispatch();
-  const list = useSelector((state) => state.routesParamsSlice);
-  const trainsList = useSelector((state) => state.trainsParamsSlice.trainsList);
+  const params = useSelector((state) => state.routesParamsSlice);
+  const trainsList = useSelector(
+    (state) => state.trainsParamsSlice?.trainsList || []
+  );
 
-  const args = makeArgs(list);
+  const args = makeArgs(params);
   const { currentData: result, isError, isFetching } = useGetRoutesQuery(args);
 
   useEffect(() => {
@@ -24,21 +26,28 @@ export default function TrainSelect() {
     }
   }, [result, dispatch]);
 
+  let content;
+
   if (isError) {
-    return <Error />;
-  }
-  if (isFetching) {
-    return <Loading />;
-  }
-  if (trainsList.length > 0) {
-    return (
-      <section className="trains">
-        <TrainsHead count={trainsList.total_count} />
+    content = (
+      <Error
+        message="Не удалось загрузить данные о поездах."
+        onRetry={() => refetch()}
+      />
+    );
+  } else if (isFetching) {
+    content = <Loading />;
+  } else if (trainsList.length > 0) {
+    content = (
+      <>
+        <TrainsHead count={trainsList.total_count || 0} />
         <TrainsList />
         <Pagination />
-      </section>
+      </>
     );
+  } else {
+    content = <div>По вашему запросу ничего не найдено.</div>;
   }
 
-  return null; 
+  return <section className="trains">{content}</section>;
 }

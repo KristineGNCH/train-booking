@@ -1,410 +1,396 @@
-.point-name,
-.point-station {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 20px;
-    text-transform: capitalize;
-    color: #292929;
+.point-name, .point-station {
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 20px;
+	text-transform: capitalize;
+	color: #292929
 }
 
 .point-station {
-    font-size: 16px;
-    width: 115px;
+	font-size: 16px;
+	width: 115px
 }
 
-.departure-point,
-.arrival-point {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
+.departure-point, .arrival-point {
+	height: 100px;
+	display: flex;
+	flex-direction: column
 }
 
 .departure-point {
-    padding: 15px 0 0 15px;
-    align-items: flex-start;
+	padding: 15px 0 0 15px;
+	align-items: flex-start
 }
 
 .arrival-point {
-    padding: 15px 15px 0 0;
-    align-items: flex-end;
+	padding: 15px 15px 0 0;
+	align-items: flex-end
 }
 
 .arrival-point .point-station {
-    text-align: end;
+	text-align: end
 }
 
 .train-comfort-props {
-    padding-left: 15px;
+	padding-left: 15px
 }
 
 .comfort-props_vector {
-    display: flex;
-    width: 92px;
-    height: 20px;
+	display: flex;
+	width: 92px;
+	height: 20px
 }
 
 .comfort-props_vector_item {
-    margin-left: 10px;
-    font-size: 1.6em;
+	margin-left: 10px;
+	font-size: 1.6em
 }
 
 .overlooked-ticket-price {
-    display: flex;
-    padding-right: 15px;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 16px;
-    text-align: right;
-    color: #928f94;
-    align-items: baseline;
+	display: flex;
+	padding-right: 15px;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 16px;
+	text-align: right;
+	color: #928f94;
+	align-items: baseline
 }
 
 .ticket-price {
-    font-weight: bold;
-    line-height: normal;
-    font-size: 36px;
-    color: #ffa800;
-    padding: 0 5px 0 5px;
+	font-weight: bold;
+	line-height: normal;
+	font-size: 36px;
+	color: #ffa800;
+	padding: 0 5px 0 5px
 }
 
 .total-price {
-    display: flex;
-    align-items: center;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    line-height: normal;
-    font-weight: bold;
-    font-size: 48px;
-    color: #ffa800;
+	display: flex;
+	align-items: center;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-size: 48px;
+	color: #ffa800
 }
 
 .rub-vector {
-    display: flex;
-    width: 20px;
-    height: 25px;
-    margin-left: 5px;
-    background-image: url(../../assets/svg/ruble.svg);
+	display: flex;
+	width: 20px;
+	height: 25px;
+	margin-left: 5px;
+	background-image: url(../../assets/svg/ruble.svg)
 }
 
 .trains {
-    width: 67%;
-    padding: 100px 0 100px 0px;
+	width: 67%;
+	padding: 100px 0 100px 0px
 }
 
 .trains_head {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 25px
 }
 
 .trains_head p {
-    margin: 0;
+	margin: 0
 }
 
-.trains-list_section-title,
-.trains-list_sort-by,
-.trains-list_show-by {
-    display: flex;
-    align-items: baseline;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 18px;
-    color: #928f94;
-    margin: 0;
+.trains-list_section-title, .trains-list_sort-by, .trains-list_show-by {
+	display: flex;
+	align-items: baseline;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 18px;
+	color: #928f94;
+	margin: 0
 }
 
 .trains-amount {
-    padding-left: 5px;
+	padding-left: 5px
 }
 
 .trains-list_section-title {
-    padding-right: 345px;
+	padding-right: 345px
 }
 
 .show-by-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0
 }
 
 .show-by-list li {
-    padding-left: 10px;
+	padding-left: 10px
 }
 
 .show-by-list li:hover {
-    color: #292929;
+	color: #292929
 }
 
 .show-by-list li:active {
-    color: #ffa800;
+	color: #ffa800
 }
 
 .sorting {
-    background-color: transparent;
+	background-color: transparent
 }
 
 .trains-list {
-    list-style: none;
-    padding: 0;
+	list-style: none;
+	padding: 0
 }
 
 .train {
-    display: flex;
-    width: 959px;
-    background: #ffffff;
-    border: 1px solid #c4c4c4;
-    box-sizing: border-box;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    margin-bottom: 50px;
+	display: flex;
+	width: 959px;
+	background: #ffffff;
+	border: 1px solid #c4c4c4;
+	box-sizing: border-box;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	margin-bottom: 50px
 }
 
 .train:hover {
-    border: 1px solid #ffa800;
+	border: 1px solid #ffa800
 }
 
 .train-description-wrap {
-    width: 197px;
-    background-color: #e4e0e9;
-    text-transform: capitalize;
+	width: 197px;
+	background-color: #e4e0e9;
+	text-transform: capitalize
 }
 
 .train-description {
-    position: relative;
-    top: 15%;
+	position: relative;
+	top: 15%
 }
 
 .train-vector {
-    display: flex;
-    width: 86px;
-    height: 86px;
-    background-image: url(../../assets/svg/Train.svg);
-    margin: auto;
+	display: flex;
+	width: 86px;
+	height: 86px;
+	background-image: url(../../assets/svg/Train.svg);
+	margin: auto
 }
 
-.train-number,
-.train-departure-time,
-.train-departure-point,
-.train-departure-station,
-.travel-time {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    line-height: normal;
-    font-size: 24px;
-    text-align: center;
-    color: #3e3c41;
-    margin: 0;
+.train-number, .train-departure-time, .train-departure-point, .train-departure-station, .travel-time {
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	line-height: normal;
+	font-size: 24px;
+	text-align: center;
+	color: #3e3c41;
+	margin: 0
 }
 
 .train-route {
-    align-items: baseline;
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 16px;
-    color: #292929;
-    padding: 0 0 0 30px;
+	align-items: baseline;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 16px;
+	color: #292929;
+	padding: 0 0 0 30px
 }
 
 .train-route li {
-    display: flex;
-    align-items: baseline;
+	display: flex;
+	align-items: baseline
 }
 
-.train-route :nth-child(1) {
-    color: #928f94;
+.train-route:nth-child(1) {
+	color: #928f94
 }
 
 .arrow-vector {
-    display: flex;
-    width: 24px;
-    height: 8px;
-    background-image: url(../../assets/svg/ArrowLeftOrange.svg);
-    margin-left: 5px;
+	display: flex;
+	width: 24px;
+	height: 8px;
+	background-image: url(../../assets/svg/ArrowLeftOrange.svg);
+	margin-left: 5px
 }
 
 .train-travel_time-scheme-wrap {
-    width: 479px;
-    text-transform: capitalize;
+	width: 479px;
+	text-transform: capitalize
 }
 
-.train-shipment-scheme,
-.train-shipment-reverse-scheme {
-    display: flex;
-    justify-content: space-between;
+.train-shipment-scheme, .train-shipment-reverse-scheme {
+	display: flex;
+	justify-content: space-between
 }
 
-.train-departure-time-wrap,
-.travel-time-wrap,
-.train-arrival-time {
-    display: flex;
-    flex-direction: column;
+.train-departure-time-wrap, .travel-time-wrap, .train-arrival-time {
+	display: flex;
+	flex-direction: column
 }
 
 .train-departure-time {
-    text-align: start;
-    color: #000000;
+	text-align: start;
+	color: #000000
 }
 
 .train-departure-point {
-    text-align: start;
-    font-weight: normal;
-    font-size: 18px;
-    color: #000000;
+	text-align: start;
+	font-weight: normal;
+	font-size: 18px;
+	color: #000000
 }
 
 .train-departure-station {
-    text-align: start;
-    font-weight: normal;
-    font-size: 16px;
-    color: #c4c4c4;
-    width: 152px;
+	text-align: start;
+	font-weight: normal;
+	font-size: 16px;
+	color: #c4c4c4;
+	width: 152px
 }
 
 .travel-time-wrap {
-    padding-right: 20px;
+	padding-right: 20px
 }
 
 .travel-time {
-    font-weight: normal;
-    font-size: 18px;
-    color: #c4c4c4;
+	font-weight: normal;
+	font-size: 18px;
+	color: #c4c4c4
 }
 
 .train-shipment-scheme {
-    padding: 50px 50px 25px 40px;
+	padding: 50px 50px 25px 40px
 }
 
 .train-shipment-reverse-scheme {
-    padding: 25px 50px 50px 40px;
+	padding: 25px 50px 50px 40px
 }
 
 .travel-time-vector {
-    display: flex;
-    width: 30px;
-    height: 20px;
-    background-image: url(../../assets/svg/Time.svg);
-    margin-top: 5px;
+	display: flex;
+	width: 30px;
+	height: 20px;
+	background-image: url(../../assets/svg/Time.svg);
+	margin-top: 5px
 }
 
 .travel-time-vector-reverse {
-    display: flex;
-    width: 30px;
-    height: 20px;
-    background-image: url(../../assets/svg/Time.svg);
-    margin-top: 5px;
+	display: flex;
+	width: 30px;
+	height: 20px;
+	background-image: url(../../assets/svg/Time.svg);
+	margin-top: 5px
 }
 
 .train-place-prices ul {
-    padding: 0;
-    list-style: none;
+	padding: 0;
+	list-style: none
 }
 
 .train-place-prices li {
-    display: flex;
-    align-items: baseline;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-    font-size: 16px;
-    color: #3e3c41;
-    justify-content: space-between;
-    margin-top: 20px;
+	display: flex;
+	align-items: baseline;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 16px;
+	color: #3e3c41;
+	justify-content: space-between;
+	margin-top: 20px
 }
 
 .type {
-    width: 80px;
+	width: 80px
 }
 
 .pagination-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end
 }
 
-.angle-back,
-.angle-forward {
-    width: 84px;
-    height: 75px;
-    border: 2px solid #c4c4c4;
-    box-sizing: border-box;
-    border-radius: 5px;
-    background-color: transparent;
+.angle-back, .angle-forward {
+	width: 84px;
+	height: 75px;
+	border: 2px solid #c4c4c4;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: transparent
 }
 
-.angle-back:hover,
-.angle-forward:hover {
-    border: 2px solid #ffa800;
+.angle-back:hover, .angle-forward:hover {
+	border: 2px solid #ffa800
 }
 
-.angle-back:active,
-.angle-forward:active {
-    background-color: #ffa800;
+.angle-back:active, .angle-forward:active {
+	background-color: #ffa800
 }
 
 .angle-back {
-    background: url(../../assets/svg/ArrowLeftOrange.svg);
-    background-repeat: no-repeat;
+	background: url(../../assets/svg/ArrowLeftOrange.svg);
+	background-repeat: no-repeat
 }
 
 .angle-forward {
-    background: url(../../assets/svg/ArrowRightOrange.svg);
-    background-repeat: no-repeat;
-    margin-left: 35px;
+	background: url(../../assets/svg/ArrowRightOrange.svg);
+	background-repeat: no-repeat;
+	margin-left: 35px
 }
 
 .pagination-list {
-    display: flex;
-    list-style: none;
-    padding: 0;
+	display: flex;
+	list-style: none;
+	padding: 0
 }
 
 .page {
-    width: 84px;
-    height: 75px;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    line-height: 70px;
-    color: #928f94;
-    border: 2px solid #c4c4c4;
-    box-sizing: border-box;
-    border-radius: 5px;
-    background-color: transparent;
-    margin-left: 35px;
+	width: 84px;
+	height: 75px;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	line-height: 70px;
+	color: #928f94;
+	border: 2px solid #c4c4c4;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: transparent;
+	margin-left: 35px
 }
 
 .page:hover {
-    color: #ffa800;
-    border: 2px solid #ffa800;
+	color: #ffa800;
+	border: 2px solid #ffa800
 }
 
 .active-page {
-    width: 84px;
-    height: 75px;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    line-height: 70px;
-    color: #928f94;
-    border: 2px solid #c4c4c4;
-    box-sizing: border-box;
-    margin-left: 35px;
-    color: #ffffff;
-    background-color: #ffa800;
-    border-radius: 5px;
+	width: 84px;
+	height: 75px;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	line-height: 70px;
+	color: #928f94;
+	border: 2px solid #c4c4c4;
+	box-sizing: border-box;
+	margin-left: 35px;
+	color: #ffffff;
+	background-color: #ffa800;
+	border-radius: 5px
 }
