@@ -1,0 +1,92 @@
+
+.breadcrumbs {
+    display: inline-block;
+    overflow: hidden;
+    height: 98px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .breadcrumbs-list {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+    background: #3e3c41;
+  }
+  
+  .breadcrumb {
+    height: 100%;
+    outline: none;
+    display: block;
+    float: left; 
+    position: relative;
+  }
+  
+  .breadcrumb-active,
+  .breadcrumb:hover {
+    background: #ffa800;
+  }
+  
+  .breadcrumb {
+    width: calc((100% - 58%) / 2 - 37px);
+  }
+  
+  .breadcrumb:first-child,
+  .breadcrumb:last-child {
+    width: calc(29% - 37px);
+  }
+  .breadcrumb:last-child {
+    flex-grow: 1;
+  }
+  
+  .breadcrumb:not(:first-child) {
+    padding-left: 34px;
+  }
+  .breadcrumb:first-child {
+    padding-right: 200px;
+    text-align: end;
+  }
+  
+  .breadcrumb a {
+    display: inline;
+    vertical-align: middle;
+    line-height: 98px;
+    text-align: center;
+  
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .breadcrumb:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    right: -35px;
+    top: 0px;
+    z-index: 20;
+    border-top: 49px solid transparent;
+    border-bottom: 49px solid transparent;
+    transition: 0.3s ease;
+  }
+  
+  .breadcrumb::before {
+    border-left: 37px solid #3e3c41;
+  }
+  
+  .breadcrumb-active::before,
+  .breadcrumb:hover::before {
+    border-left: 37px solid #ffa800;
+  }
+  
+  .breadcrumb__number-list {
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 24px;
+    padding: 5px 15px 5px 15px;
+    margin: 0 15px 0 20px;
+  }
+  
+  /*конец breadcrams */

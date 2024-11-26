@@ -1,10 +1,10 @@
-import Header from "../components/Header/Header";
+import HeaderSelectOptions from "../components/Header/HeaderSelectOptions";
 import Footer from "../components/Footer/Footer";
 
 export default function Layout({ main, sidebar, sidebarBottom }) {
   return (
     <>
-      <Header />
+      <HeaderSelectOptions />
       <main className="main-container">
         <section className="sidebar-content">
           {sidebar}

@@ -97,6 +97,7 @@ export default function Header() {
             Вся жизнь - <b>путешествие!</b>
           </h1>
         </div>
+        
         <div className="ticket">
           <form className="ticket-form" onSubmit={setParamsinStore}>
             <div className="header-form__direction">
@@ -201,7 +202,7 @@ export default function Header() {
                 <button
                   className="find-tickets__button"
                   onClick={setParamsinStore}
-                  disabled={loading}
+                  // disabled={loading}
                 >
                   Найти билеты
                 </button>

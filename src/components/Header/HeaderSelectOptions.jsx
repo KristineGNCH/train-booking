@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import NavHeader from "./NavHeader";
-import BreadCrums from "./Calendar/Calendar.jsx";
+import Nav from "./Nav";
+import BreadCrums from "./BreadCrums/BreadCrums";
 import Datalist from "./Datalist";
 import { setParams } from "../../reducers/routesParamsSlice";
 import { useDispatch } from "react-redux";
+import DatePicker from "react-datepicker";
+
 import "./header.css";
 
 import point from "../../assets/svg/Point.svg";
@@ -18,8 +20,10 @@ export default function HeaderSelectOptions() {
 
   const [from_city_id, setFrom_city_id] = useState("");
   const [to_city_id, setTo_city_id] = useState("");
-  const [dateTo, setDateTo] = useState("");
-  const [dateBack, setDateBack] = useState("");
+  const [departureDate, setDepartureDate] = useState(null);
+  const [returnDate, setReturnDate] = useState(null);
+  const [dateTo] = useState("");
+  const [dateBack] = useState("");
 
   const handleChangeFrom = (evt) => {
     setValueFrom(evt.target.value);
@@ -27,14 +31,6 @@ export default function HeaderSelectOptions() {
 
   const handleChangeTo = (evt) => {
     setValueTo(evt.target.value);
-  };
-
-  const handledDateTo = (evt) => {
-    setDateTo(evt.target.value);
-  };
-
-  const handledDateBack = (evt) => {
-    setDateBack(evt.target.value);
   };
 
   const setIdFrom = (id) => {
@@ -45,139 +41,160 @@ export default function HeaderSelectOptions() {
     setTo_city_id(id);
   };
 
-  const setParamsinStore = (evt) => {
+  const setParamsinStore = async (evt) => {
     evt.preventDefault();
-    const request = {
-      from_city_id: from_city_id,
-      to_city_id: to_city_id,
-      date_start: dateTo,
-      date_end: dateBack,
-    };
-    dispatch(setParams(request));
+    try {
+      dispatch(resetVans());
+      dispatch(resetRoutes());
+      dispatch(resetSeats());
+      const request = {
+        from_city_id: from_city_id,
+        to_city_id: to_city_id,
+        date_start: dateTo,
+        date_end: dateBack,
+      };
+      await dispatch(setParams(request));
+      navigate("/trainselect");
+    } catch (error) {
+      console.error("Ошибка при установке параметров:", error);
+    }
+  };
+
+  const handleRotate = () => {
+    setValueFrom((prev) => {
+      const temp = prev;
+      setValueFrom(valueTo);
+      return valueTo;
+    });
+    setValueTo((prev) => {
+      return valueFrom;
+    });
+
+    setFrom_city_id((prev) => {
+      const temp = prev;
+      setFrom_city_id(to_city_id);
+      return to_city_id;
+    });
+    setTo_city_id((prev) => {
+      return from_city_id;
+    });
   };
 
   return (
-    <header className="header-trainselect">
-      <div className="header-trainselect-image">
-        <NavHeader />
-        <div className="trainSelect_header-content">
-          <div className="trainSelect_header-content_search-form-container">
-            <form className="trainSelect_header-content_search-form">
-              <div className="trainSelect__header-form__direction">
-                <h2 className="ticket-form__head">Направление</h2>
-                <div className="trainSelect__header-form__items">
-                  <div className="train-select__header-form__item">
-                    <input
-                      type="text"
-                      className="ticket-form__input from_search"
-                      placeholder="Откуда"
-                      list="cities"
-                      name="cities"
-                      autoсomplete="off"
-                      value={valueFrom}
-                      onChange={handleChangeFrom}
-                      required
+    <header className="header-trainselect-small">
+      <div className="header-trainselect-small-image">
+        <Nav />
+
+        <div className="ticket-small main-container">
+          <form className="ticket-form-small" onSubmit={setParamsinStore}>
+            <div className="header-form-small__direction">
+              <h2 className="ticket-form-small__title">Направление</h2>
+              <div className="header-form__items">
+                <div className="header-form__item">
+                  <input
+                    type="text"
+                    className="ticket-form-small__input from_search"
+                    placeholder="Откуда"
+                    list="cities"
+                    name="cities"
+                    autoComplete="off"
+                    value={valueFrom}
+                    onChange={handleChangeFrom}
+                    required
+                  />
+                  <datalist id="cities">
+                    <Datalist arg={valueFrom} onClick={setIdFrom} />
+                  </datalist>
+                  <img className="header-form__icon" src={point} alt="image" />
+                </div>
+                <div className="rotate" onClick={handleRotate}>
+                  <img src={rotate} alt="rotate" />
+                </div>
+                <div className="header-form__item">
+                  <input
+                    type="text"
+                    className="ticket-form-small__input where_search right"
+                    placeholder="Куда"
+                    list="citiesTo"
+                    name="citiesTo"
+                    autoComplete="off"
+                    value={valueTo}
+                    onChange={handleChangeTo}
+                    required
+                  />
+                  <datalist id="citiesTo">
+                    <Datalist arg={valueTo} onClick={setIdTo} />
+                  </datalist>
+                  <img className="header-form__icon" src={point} alt="image" />
+                </div>
+              </div>
+            </div>
+
+            <div className="header-form-small__date">
+              <h2 className="ticket-form-small__title">Дата</h2>
+              <div className="header-form__items">
+                <div className="header-form__item">
+                  <div className="datepicker-wrapper">
+                    <DatePicker
+                      className="datepicker"
+                      selected={departureDate}
+                      onChange={(date) => setDepartureDate(date)}
+                      placeholderText="ДД/ММ/ГГ"
+                      minDate={new Date()}
+                      popperPlacement="bottom"
                     />
-                    <datalist id="cities">
-                      {<Datalist arg={valueFrom} onClick={setIdFrom} />}
-                    </datalist>
                     <img
                       className="header-form__icon"
-                      src={point}
-                      alt="image"
-                    />
-                  </div>
-                  <div className="rotate">
-                    <img src={rotate} alt="image" />
-                  </div>
-                  <div className="train-select__header-form__item">
-                    <input
-                      className="ticket-form__input where_search right"
-                      placeholder="Куда"
-                      list="citiesTo"
-                      name="citiesTo"
-                      autoсomplete="off"
-                      value={valueTo}
-                      onChange={handleChangeTo}
-                      required
-                    />
-                    <datalist id="citiesTo">
-                      {<Datalist arg={valueTo} onClick={setIdTo} />}
-                    </datalist>
-                    <img
-                      className="header-form__icon"
-                      src={point}
-                      alt="image"
+                      src={calendar}
+                      alt="Календарь"
                     />
                   </div>
                 </div>
-              </div>
-              <div className="trainSelect__header-form__date">
-                <h2 className="ticket-form__head">Дата</h2>
-                <div className="header-form__items">
-                  <div className="train-select__header-form__item">
-                    <div className="datepicker">
-                      <input
-                        type="date"
-                        className="ticket-form__input departure-date"
-                        placeholder="ДД/ММ/ГГ"
-                        onChange={handledDateTo}
-                        //required
-                      />
-                      <div
-                        className="datepicker__wrapper"
-                        style={{
-                          zIndex: 9999,
-                          position: "absolute",
-                          display: "none",
-                        }}
-                      ></div>
-                    </div>
-                    <img
-                      className="header-form__icon"
-                      src={calendar}
-                      alt="image"
+
+                <div
+                  className="rotate"
+                  onClick={() => {
+                    const tempDate = departureDate;
+                    setDepartureDate(returnDate);
+                    setReturnDate(tempDate);
+                  }}
+                >
+                  <img src={rotate} alt="Изменить" />
+                </div>
+
+                <div className="header-form__item">
+                  <div className="datepicker-wrapper">
+                    <DatePicker
+                      className="datepicker"
+                      selected={returnDate}
+                      onChange={(date) => setReturnDate(date)}
+                      placeholderText="ДД/ММ/ГГ"
+                      minDate={
+                        departureDate ? new Date(departureDate) : new Date()
+                      }
+                      popperPlacement="bottom"
                     />
-                  </div>
-                  <div className="rotate"></div>
-                  <div className="train-select__header-form__item">
-                    <div className="datepicker">
-                      <input
-                        type="date"
-                        className="ticket-form__input departure-date-back right"
-                        placeholder="ДД/ММ/ГГ"
-                        onChange={handledDateBack}
-                        //required
-                      />
-                      <div
-                        className="datepicker__wrapper"
-                        style={{
-                          zIndex: 9999,
-                          position: "absolute",
-                          display: "none",
-                        }}
-                      ></div>
-                    </div>
                     <img
                       className="header-form__icon"
                       src={calendar}
-                      alt="image"
+                      alt="Календарь"
                     />
                   </div>
                 </div>
               </div>
               <div className="header-form__submit">
-                <div className="train-select__header-form__item">
+                <div className="header-form__item">
                   <button
-                    className="find-tickets right"
+                    className="find-tickets__button"
                     onClick={setParamsinStore}
+                    // disabled={loading}
                   >
                     Найти билеты
                   </button>
                 </div>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
       </div>
       <BreadCrums />
