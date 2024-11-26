@@ -369,6 +369,7 @@ input:checked+.slider:before {
 .time-filter_title-container {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .time-filter-title {
@@ -423,18 +424,17 @@ input:checked+.slider:before {
 
 .arrival-vector {
     width: 30px;
-    height: 20px;
+    height: 25px;
     background-image: url(../../assets/svg/ArrowOrangeLeftBckgrnd.svg);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
     margin: 0 9px 0 0;
 }
 
 .departure-vector {
     width: 30px;
-    height: 20px;
+    height: 25px;
     background-image: url(../../assets/svg/ArrowOrangeRightBckgrnd.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -964,3 +964,7 @@ input:checked+.slider:before {
     background-color: #ffa800;
     border-radius: 5px;
 }
+
+.collapsed {
+    display: none; 
+  }
