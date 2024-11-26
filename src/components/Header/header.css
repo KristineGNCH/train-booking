@@ -156,10 +156,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .header-form__icon {
     position: absolute;
+    right: 10px;
     top: 50%;
-    right: 0;
-    transform: translate(-9px, -50%);
-    vertical-align: middle;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
 }
 
 .rotate {
@@ -242,6 +243,31 @@ datalist option:hover, datalist option:focus {
     min-width: 660px;
 }
 
+.datepicker-wrapper {
+    /* position: relative; */
+    width: 322px;
+    height: 60px;
+    top: 713px;
+    left: 1341px;
+    gap: 0px;
+    border-radius: 3px 0px 0px 0px;
+    opacity: 0px;
+
+}
+
+.datepicker {
+    width: 100%;
+    padding: 19px 28px 11px 29px;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
 .search-form_input {
     box-sizing: border-box;
     width: 100%;
@@ -314,5 +340,14 @@ datalist option:hover, datalist option:focus {
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     text-transform: uppercase;
+}
+
+.find-tickets__button:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.find-tickets__button:focus {
+    border: 1px solid rgba(255, 168, 0, 1);
+    background: rgba(255, 168, 0, 1);
 
 }

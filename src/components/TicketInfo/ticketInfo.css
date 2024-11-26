@@ -1,0 +1,210 @@
+.travel-details {
+    width: 360px;
+    background: #3e3c41;
+  }
+  
+  .travel-details-title,
+  .travel-details-date,
+  .travel-details h2,
+  .sidebar-train-number-title,
+  .sidebar-train-number,
+  .sidebar-train-name,
+  .sidebar-train-name-title,
+  .sidebar-train-departure-time,
+  .travel-details_departure-date,
+  .travel-details_arrival-date,
+  .passengers-count-container p,
+  .total p,
+  .passenger-data-title,
+  .age-type-option,
+  .passenger-age-type-selector,
+  .passenger-name-selector-container input,
+  .passenger-name-selector-container h3,
+  .switch-field label,
+  .switch-title,
+  .birthday-title,
+  .low-mobility-checkbox-container,
+  .document-type_title,
+  .next-passenger_button,
+  .passenger-add-title {
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+  }
+  
+  .travel-details-title {
+    justify-content: center;
+    height: 100px;
+    font-weight: 500;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0;
+  }
+  
+  .travel-details h2 {
+    font-size: 30px;
+    color: #ffffff;
+    padding-left: 24px;
+  }
+  
+  .travel-details-departure,
+  .travel-details-departure_back {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 40px;
+  }
+  
+  .travel-details_title-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .travel-details-main_title {
+    padding: 25px 0 10px 30px;
+    margin: 0;
+  }
+  
+  .travel-details-date {
+    font-size: 18px;
+    color: #ffffff;
+    padding-left: 10px;
+  }
+  
+  .sidebar-train-number,
+  .sidebar-train-name {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: right;
+    color: #ffffff;
+    padding: 28px 28px 0 0;
+  }
+  
+  .sidebar-train-name-list {
+    list-style: none;
+    margin: 0;
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+  
+  .sidebar-train-number-title,
+  .sidebar-train-name-title {
+    font-size: 18px;
+    color: #e5e5e5;
+    padding-left: 28px;
+  }
+  
+  .sidebar-train-departure-time {
+    font-weight: bold;
+    font-size: 24px;
+    color: #ffffff;
+  }
+  
+  .travel-details_departure-day,
+  .travel-details_arrival-day {
+    font-size: 18px;
+    color: #928f94;
+  }
+  
+  .sidebar-train-departure-point {
+    color: #ffffff;
+  }
+  
+  .sidebar-train-departure-station {
+    color: #928f94;
+  }
+  
+  .sidebar-train-shipment-scheme {
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .sidebar-train-time-wrap,
+  .sidebar-train-departure-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 25px 0 25px;
+  }
+  
+  .travel-time-wrap {
+    padding: 0;
+  }
+  
+  .sidebar-train-shipment-scheme_departure-date,
+  .sidebar-train-shipment-scheme_arrival-date,
+  .departure-point-wrap,
+  .arrival-point-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-departure-point-wrap, .arrival-point-wrap{
+    text-transform: capitalize ;
+  }
+  
+  .sidebar-train-shipment-scheme_departure-date,
+  .sidebar-train-shipment-scheme_arrival-date {
+    padding-top: 25px;
+  }
+  
+  .sidebar-train-departure-point,
+  .sidebar-train-departure-station {
+    display: flex;
+  }
+  
+  .arrival-point-wrap .sidebar-train-departure-point,
+  .arrival-point-wrap .sidebar-train-departure-station,
+  .sidebar-train-shipment-scheme_arrival-date .sidebar-train-departure-time {
+    justify-content: flex-end;
+  }
+  
+  
+  .passenger-vector {
+    display: flex;
+    width: 26px;
+    height: 26px;
+    background: url(../../img/icons/css_sprites.png) -20px -680px;
+    margin: 0 9px 0 0;
+  }
+  
+  .passengers-count-container p {
+    font-size: 18px;
+    color: #e5e5e5;
+    margin: 22px 0;
+  }
+  
+  .count-list-wrap {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 22px;
+  }
+  
+  .passengers-price-total {
+    margin-right: 25px;
+  }
+  
+  .passengers-count-total {
+    margin-left: 25px;
+  }
+  
+  .total {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 50px 0;
+  }
+  
+  .total p {
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }

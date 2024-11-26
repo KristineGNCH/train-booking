@@ -6,7 +6,7 @@ import Error from "../Modal/Error/Error";
 import Loading from "../Modal/Loading/Loading";
 import { setTrainsResult } from "../../reducers/trainsParamsSlise";
 import { useDispatch, useSelector } from "react-redux";
-import { useGetRoutesQuery } from "../../api/api";
+import { getCities } from "../../api/cities";
 import { useEffect } from "react";
 import "./TrainSelect.css";
 
@@ -18,7 +18,7 @@ export default function TrainSelect() {
   );
 
   const args = makeArgs(params);
-  const { currentData: result, isError, isFetching } = useGetRoutesQuery(args);
+  const { currentData: result, isError, isFetching } = getCities(args);
 
   useEffect(() => {
     if (result) {
@@ -46,7 +46,7 @@ export default function TrainSelect() {
       </>
     );
   } else {
-    content = <div>По вашему запросу ничего не найдено.</div>;
+    content = <div className="trains-no-trains">По вашему запросу ничего не найдено.</div>;
   }
 
   return <section className="trains">{content}</section>;

@@ -1,19 +1,27 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const url = "https://netology-trainbooking.netoservices.ru/";
+const baseQuery = fetchBaseQuery({
+  baseUrl: "https://netology-trainbooking.netoservices.ru/",
+  prepareHeaders: (headers) => {
+    headers.set('Accept', 'application/json');
+    return headers;
+  },
+});
+
+const buildQueryString = (params) => {
+  return Object.keys(params).map(key => `${key}=${params[key]}`).join('&');
+};
 
 export const api = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({
-    baseUrl: "https://netology-trainbooking.netoservices.ru/",
-  }),
+  baseQuery,
   endpoints: (builder) => ({
     getCities: builder.query({
       query: (arg) => `routes/cities?name=${arg}`,
       providesTags: (result, error, arg) => [{ type: "Cities", id: arg }],
     }),
     getRoutes: builder.query({
-      query: (args) => `routes?${args}`,
+      query: (args) => `routes?${buildQueryString(args)}`,
       providesTags: (result, error, args) => [{ type: "Routes", id: args }],
     }),
     getLastRoutes: builder.query({
@@ -23,12 +31,8 @@ export const api = createApi({
     getSeats: builder.query({
       query: (args) => {
         let path = `routes/${args.id}/seats`;
-        for (let key in args) {
-          if (typeof args[key] == "boolean" && key !== "id") {
-            path = path + `?${key}=${args[key]}`;
-          }
-        }
-        return path;
+        const queryString = buildQueryString(args);
+        return queryString ? `${path}?${queryString}` : path;
       },
       providesTags: (result, error, args) => [{ type: "Seats", id: args }],
     }),
@@ -38,7 +42,6 @@ export const api = createApi({
         method: "POST",
         body: JSON.stringify(payload),
         headers: {
-          Accept: "application/json",
           "Content-Type": "application/json",
         },
       }),
@@ -47,20 +50,25 @@ export const api = createApi({
   }),
 });
 
-const postEmail = (email) => {
-  let formData = new FormData();
-  formData.append("email", email);
-  fetch("https://students.netoservices.ru/fe-diplom/subscribe", {
-    body: formData,
-    method: "post",
-    "Content-Type": "application/x-www-form-urlencoded",
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      data.status
-        ? alert("Вы подписаны на рассылку")
-        : alert("Ошибка. Что-то пошло не так");
+const postEmail = async (email) => {
+  try {
+    let formData = new FormData();
+    formData.append("email", email);
+    const response = await fetch("https://netology-trainbooking.netoservices.ru/subscribe?", {
+      body: formData,
+      method: "POST",
     });
+
+    const data = await response.json();
+    if (data.status) {
+      alert("Вы подписаны на рассылку");
+    } else {
+      alert("Ошибка. Что-то пошло не так");
+    }
+  } catch (error) {
+    console.error("Ошибка при подписке:", error);
+    alert("Ошибка сети. Пожалуйста, попробуйте позже.");
+  }
 };
 
 export const {

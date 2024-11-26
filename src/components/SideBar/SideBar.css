@@ -13,13 +13,17 @@
     margin-bottom: 150px;
 }
 
+.sidebar-tickets {
+    margin-top: 94px;
+}
+
 .sidebar-tickets_title {
     width: 378px;
     height: 39px;
     top: 1895px;
     left: 260px;
     gap: 0px;
-    opacity: 0px;
+
     font-family: "Roboto";
     font-size: 30px;
     font-weight: 500;
@@ -27,10 +31,37 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    color: rgba(0, 0, 0, 1);
+
 
 }
 
 /*filters */
+
+.dateFilter_departure_title {
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35.16px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+
+    padding-bottom: 10px;
+    padding-top: 26px;
+}
+
+.dateFilter_input {
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
 
 .filters-container {
     width: 360px;
@@ -214,10 +245,27 @@ input:checked+.slider:before {
 }
 
 .price-filter-title,
-.time-filter-main_title {
+.time-filter-main_title-wrapper {
     width: 160px;
-    padding: 30px 0 10px 30px;
+    padding: 30px 0 25px 30px;
     margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.time-filter-main_title {
+    color: #ffffff;
+
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35.16px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }
 
 .start-cost-title {
@@ -376,7 +424,7 @@ input:checked+.slider:before {
 .arrival-vector {
     width: 30px;
     height: 20px;
-    background-image: url(../../assets/svg/ArrowLeftOrange.svg);
+    background-image: url(../../assets/svg/ArrowOrangeLeftBckgrnd.svg);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
@@ -387,7 +435,7 @@ input:checked+.slider:before {
 .departure-vector {
     width: 30px;
     height: 20px;
-    background-image: url(../../assets/svg/ArrowRightOrange.svg);
+    background-image: url(../../assets/svg/ArrowOrangeRightBckgrnd.svg);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
@@ -792,7 +840,7 @@ input:checked+.slider:before {
     display: flex;
     width: 16px;
     height: 19px;
-    background: url(../img/icons/css_sprites.png) -839px -77px;
+    background: url(../../assets/svg/ruble.svg);
     margin-left: 5px;
 }
 
@@ -861,12 +909,12 @@ input:checked+.slider:before {
 }
 
 .angle-back {
-    background: url(../img/icons/pagination-angle-back.png) 30px 20px;
+    background: url(../../assets/svg/ArrowRightBlack.svg);
     background-repeat: no-repeat;
 }
 
 .angle-forward {
-    background: url(../img/icons/pagination-angle-forward.png) 30px 20px;
+    background: url(../../assets/svg/ArrowRightBlack.svg);
     background-repeat: no-repeat;
     margin-left: 35px;
 }

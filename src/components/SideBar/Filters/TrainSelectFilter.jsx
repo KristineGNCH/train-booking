@@ -5,7 +5,9 @@ import { setOneParam } from "../../../reducers/routesParamsSlice";
 import { vanClasses } from "../../../service/dataTransform";
 import { DepartureFilter } from "./DepartureFilter";
 
-export default function FilterTrainSelect() {
+import "./../SideBar.css";
+
+export default function TrainSelectFilter() {
   const dispatch = useDispatch();
 
   const handleChangeTypeVan = (evt) => {
@@ -41,7 +43,7 @@ export default function FilterTrainSelect() {
       <div className="filters-container">
         <div className="dateFilter">
           <div className="dateFilter_departure">
-            <h2>Дата поездки</h2>
+            <h2  className="dateFilter_departure_title">Дата поездки</h2>
             <input
               type="date"
               className="dateFilter_input filter_departure-date"
@@ -54,7 +56,7 @@ export default function FilterTrainSelect() {
             />
           </div>
           <div className="dateFilter_departure-back">
-            <h2>Дата возвращения</h2>
+            <h2 className="dateFilter_departure_title">Дата возвращения</h2>
             <input
               type="date"
               className="dateFilter_input filter_departure-date-back"

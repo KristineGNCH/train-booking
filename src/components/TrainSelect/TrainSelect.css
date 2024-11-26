@@ -103,6 +103,18 @@
 	margin: 0
 }
 
+.trains-no-trains {
+	font-family: "Roboto";
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.13px;
+	text-align: left;
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
+	color: #928F94; 
+
+}
+
 .trains-list_section-title, .trains-list_sort-by, .trains-list_show-by {
 	display: flex;
 	align-items: baseline;

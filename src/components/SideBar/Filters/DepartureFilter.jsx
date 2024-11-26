@@ -72,11 +72,10 @@ export function DepartureFilter() {
       <div className="time-filter">
         <div className="departure_time-filters_container">
           <div className="time-filter_title-container">
-            <h2 className="time-filter-main_title">
-              <span className="departure-vector">
-                <p style={{ marginLeft: 40 }}>Туда</p>
-              </span>
-            </h2>
+            <div className="time-filter-main_title-wrapper">
+              <span className="departure-vector"></span>
+              <p className="time-filter-main_title">Туда</p>
+            </div>
             <span className="closeUP-vector"></span>
           </div>
           <div className="departure-time">

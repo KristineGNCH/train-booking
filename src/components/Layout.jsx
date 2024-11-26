@@ -1,10 +1,10 @@
-import MainSearchTickets from "../components/Header/Header";
+import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 export default function Layout({ main, sidebar, sidebarBottom }) {
   return (
     <>
-      <MainSearchTickets />
+      <Header />
       <main className="main-container">
         <section className="sidebar-content">
           {sidebar}
