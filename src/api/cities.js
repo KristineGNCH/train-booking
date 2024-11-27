@@ -1,5 +1,13 @@
 export async function getCities(query) {
-  return await fetch(`https://students.netoservices.ru/fe-diplom/routes/cities?name=${query}`).then(response => response.json()).catch(err => console.log(err))
+  try {
+    const response = await fetch(`https://students.netoservices.ru/fe-diplom/routes/cities?name=${encodeURIComponent(query)}`);
+    if (!response.ok) {
+      console.error(`Ошибка ${response.status}: ${response.statusText}`);
+      return null; 
+    }
+    return await response.json();
+  } catch (err) {
+    console.log(err);
+    return null; 
+  }
 }
-
-

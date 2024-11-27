@@ -25,85 +25,55 @@ const seatsParamsSlice = createSlice({
   initialState,
   reducers: {
     resetSeats: (state) => initialState,
-    setSeatsParams: (state, action) => {
-        state.req.id = action.payload.req.id
-        state.data.item  = action.payload.data
-    },
-    setSelectSeats: (prevState, action) => ({
-      ...prevState,
-      seats: [
-        ...prevState.seats,
-        {
-          num: action.payload.num,
-          category: prevState.category,
-          price: action.payload.price,
-        },
-      ],
-    }),
-    resetSelectSeats: (prevState, action) => ({
-      ...prevState,
-      seats: prevState.seats.filter((item) => item.num !== action.payload),
-    }),
-    setPassInfo: (prevState, action) => ({
-      ...prevState,
-      seats: prevState.seats.map((elem) => {
-        if (elem.num === action.payload.itemNum) {
-          return {
-            ...elem,
-            [action.payload.key]: action.payload.value,
-          };
-        } else {
-          return elem;
-        }
-      }),
-    }),
-    deletePassInfo: (prevState, action) => ({
-      ...prevState,
-      seats: prevState.seats.filter((elem) => elem.num !== action.payload),
-    }),
-    setCategory: (prevState, action) => ({
-      ...prevState,
-      category: action.payload,
-    }),
-    setPersonalData: (prevState, action) => ({
-      ...prevState,
-      personalData: {
-        ...prevState.personalData,
-        [action.payload.key]: action.payload.value,
-      },
-    }),
-    setPayWay: (prevState, action) => ({
-      ...prevState,
-      personalData: {
-        ...prevState.personalData,
-        payMethod: {
-          ...prevState.personalData.personalData,
-          payMethod: action.payload,
 
-        },
-      },
-    }),
-    resetPayWay: (prevState) => ({
-      ...prevState,
-      personalData: {
-        ...prevState.personalData,
-        payMethod: {
-          ...prevState.personalData.personalData,
-          payMethod: "",
-          online: "",
-        },
-      },
-    }),
-    setOnlinePay: (prevState, action) => ({
-      ...prevState,
-      personalData: {
-        ...prevState.personalData,
-        payMethod: {
-          ...prevState.personalData.payMethod,
-          online: action.payload,
-        },
-      },
-    }),
+    setSeatsParams: (state, action) => {
+      state.req.id = action.payload.req.id;
+      state.data.item = action.payload.data;
+    },
+
+    setSelectSeats: (state, action) => {
+      state.seats.push({
+        num: action.payload.num,
+        category: state.category,
+        price: action.payload.price,
+      });
+    },
+
+    resetSelectSeats: (state, action) => {
+      state.seats = state.seats.filter((item) => item.num !== action.payload);
+    },
+
+    setPassInfo: (state, action) => {
+      const seat = state.seats.find((elem) => elem.num === action.payload.itemNum);
+      if (seat) {
+        seat[action.payload.key] = action.payload.value;
+      }
+    },
+
+    deletePassInfo: (state, action) => {
+      state.seats = state.seats.filter((elem) => elem.num !== action.payload);
+    },
+
+    setCategory: (state, action) => {
+      state.category = action.payload;
+    },
+
+    setPersonalData: (state, action) => {
+      state.personalData[action.payload.key] = action.payload.value;
+    },
+
+    setPayWay: (state, action) => {
+      state.personalData.payMethod.payMethod = action.payload;
+    },
+
+    resetPayWay: (state) => {
+      state.personalData.payMethod.payMethod = "";
+      state.personalData.payMethod.online = "";
+    },
+
+    setOnlinePay: (state, action) => {
+      state.personalData.payMethod.online = action.payload;
+    },
   },
 });
 
@@ -120,4 +90,5 @@ export const {
   resetPayWay,
   setOnlinePay,
 } = seatsParamsSlice.actions;
+
 export default seatsParamsSlice.reducer;

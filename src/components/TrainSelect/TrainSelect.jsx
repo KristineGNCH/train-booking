@@ -1,43 +1,55 @@
-import TrainsHead from "./TrainsHead";
-import { makeArgs } from "../../service/dataTransform";
-import TrainsList from "./TrainsList";
-import Pagination from "./Pagination";
-import Error from "../Modal/Error/Error";
-import Loading from "../Modal/Loading/Loading";
-import { setTrainsResult } from "../../reducers/trainsParamsSlise";
+import React, { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCities } from "../../api/cities";
-import { useEffect } from "react";
-import "./TrainSelect.css";
+import { setTrainsResult } from "../../reducers/trainsParamsSlice"; // проверьте, правильный ли путь импорта
+import { getCities } from "../../api/cities"; // проверьте, правильный ли путь импорта
+import Loading from "../Modal/Loading/Loading"; // проверьте, правильный ли путь импорта
+import Error from "../Modal/Error/Error"; // проверьте, правильный ли путь импорта
+import TrainsHead from "./TrainsHead"; // проверьте, правильный ли путь импорта
+import TrainsList from "./TrainsList"; // проверьте, правильный ли путь импорта
+import Pagination from "./Pagination"; // проверьте, правильный ли путь импорта
 
-export default function TrainSelect() {
+const TrainSelect = () => {
   const dispatch = useDispatch();
   const params = useSelector((state) => state.routesParamsSlice);
-  const trainsList = useSelector(
-    (state) => state.trainsParamsSlice?.trainsList || []
-  );
+  const trainsList = useSelector(state => state.trainsParamsSlice?.trainsList || []);
+  const [cities, setCities] = useState([]);
+  const [status, setStatus] = useState({ loading: true, error: null });
 
-  const args = makeArgs(params);
-  const { currentData: result, isError, isFetching } = getCities(args);
+  const fetchCities = useCallback(async () => {
+    setStatus({ loading: true, error: null });
+    try {
+      const result = await getCities(makeArgs(params));
+      setCities(result);
+      dispatch(setTrainsResult(result));
+    } catch (err) {
+      setStatus({ loading: false, error: err.message });
+    } finally {
+      setStatus(prev => ({ ...prev, loading: false }));
+    }
+  }, [params, dispatch]);
 
   useEffect(() => {
-    if (result) {
-      dispatch(setTrainsResult(result));
+    let isMounted = true;
+
+    if (isMounted) {
+      fetchCities();
     }
-  }, [result, dispatch]);
+
+    return () => {
+      isMounted = false;
+    };
+  }, [fetchCities]);
+
+  const handleRetry = useCallback(() => {
+    fetchCities();
+  }, [fetchCities]);
 
   let content;
-
-  if (isError) {
-    content = (
-      <Error
-        message="Не удалось загрузить данные о поездах."
-        onRetry={() => refetch()}
-      />
-    );
-  } else if (isFetching) {
+  if (status.error) {
+    content = <Error message={status.error} onRetry={handleRetry} />;
+  } else if (status.loading) {
     content = <Loading />;
-  } else if (trainsList.length > 0) {
+  } else if (trainsList && trainsList.length > 0) {
     content = (
       <>
         <TrainsHead count={trainsList.total_count || 0} />
@@ -46,8 +58,14 @@ export default function TrainSelect() {
       </>
     );
   } else {
-    content = <div className="trains-no-trains">По вашему запросу ничего не найдено.</div>;
+    content = (
+      <div className="trains-no-trains">
+        По вашему запросу ничего не найдено.
+      </div>
+    );
   }
 
   return <section className="trains">{content}</section>;
-}
+};
+
+export default TrainSelect;

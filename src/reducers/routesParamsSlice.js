@@ -1,30 +1,37 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
-  from_city_id: "",
-  to_city_id: "",
-  date_start: "",
-  date_end: "",
-  date_start_arrival: "",
-  date_end_arrival: "",
-  have_first_class: false,
-  have_second_class: false,
-  have_third_class: false,
-  have_fourth_class: false,
-  have_wifi: false,
-  have_air_conditioning: false,
-  have_express: false,
-  price_from: 0,
-  price_to: 15000,
-  start_departure_hour_from: "",
-  start_departure_hour_to: "",
-  start_arrival_hour_from: "",
-  start_arrival_hour_to: "",
-  end_departure_hour_from: "",
-  end_departure_hour_to: "",
-  end_arrival_hour_from: "",
-  end_arrival_hour_to: "",
+  fromCityId: "",
+  toCityId: "",
+  startDate: "",
+  endDate: "",
+  arrivalStartDate: "",
+  arrivalEndDate: "",
+  classTypes: {
+    first: false,
+    second: false,
+    third: false,
+    fourth: false,
+  },
+  amenities: {
+    wifi: false,
+    airConditioning: false,
+    express: false,
+  },
+  priceRange: {
+    from: 0,
+    to: 15000,
+  },
+  travelTimes: {
+    departure: {
+      startHourFrom: "",
+      startHourTo: "",
+    },
+    arrival: {
+      startHourFrom: "",
+      startHourTo: "",
+    },
+  },
   limit: 5,
   offset: 0,
   sort: "date",
@@ -36,16 +43,26 @@ const routesParamsSlice = createSlice({
   reducers: {
     resetRoutes: () => initialState,
     setParams: (state, action) => {
-      state.from_city_id = action.payload.from_city_id;
-      state.to_city_id = action.payload.to_city_id;
-      state.date_start = action.payload.date_start;
-      state.date_end = action.payload.date_end;
+      const { fromCityId, toCityId, startDate, endDate } = action.payload;
+      state.fromCityId = fromCityId;
+      state.toCityId = toCityId;
+      state.startDate = startDate;
+      state.endDate = endDate;
     },
     setOneParam: (state, action) => {
-      state[action.payload.key] = action.payload.value;
+      const { key, value } = action.payload;
+      state[key] = value;
+    },
+    setClassType: (state, action) => {
+      const { classType, value } = action.payload;
+      state.classTypes[classType] = value;
+    },
+    setAmenity: (state, action) => {
+      const { amenity, value } = action.payload;
+      state.amenities[amenity] = value;
     },
   },
 });
 
-export const { resetRoutes, setParams, setOneParam } = routesParamsSlice.actions;
+export const { resetRoutes, setParams, setOneParam, setClassType, setAmenity } = routesParamsSlice.actions;
 export default routesParamsSlice.reducer;

@@ -11,7 +11,7 @@
     display: block;
     height: 64px;
     line-height: 64px;
-    padding-top: 15px;
+    padding-top: 9px;
 }
 
 .header__logo,
@@ -94,6 +94,10 @@
     opacity: 80%;
 }
 
+
+.header-form__direction {
+    padding-top: 79px;
+}
 .ticket-form {
     display: flex;
     flex-direction: column;
@@ -116,9 +120,6 @@
     color: #ffffff;
 }
 
-.ticket-form__title:first-child {
-    padding-top: 79px;
-}
 
 .ticket-form__input {
     box-sizing: border-box;
@@ -201,7 +202,7 @@ datalist option:focus {
 }
 
 .datepicker {
-    width: 100%;
+    width: 122%;
     padding: 19px 28px 11px 29px;
     font-family: "Roboto";
     font-size: 18px;

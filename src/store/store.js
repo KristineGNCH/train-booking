@@ -14,7 +14,7 @@ import { api } from "../api/api";
 import routesParamsSlice from "../reducers/routesParamsSlice";
 import seatsParamsSlice from "../reducers/seatsParamsSlice";
 import vansParamsSlice from "../reducers/vansParamsSlice";
-import trainsParamsSlice from "../reducers/trainsParamsSlise";
+import trainsParamsSlice from "../reducers/trainsParamsSlice";
 
 const reducers = combineReducers({
   routesParamsSlice: routesParamsSlice,
@@ -40,14 +40,11 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(
-      api.middleware,
-    ),
+    }).concat(api.middleware),
+  devTools: process.env.NODE_ENV !== 'production',
 });
 
 export let persistor = persistStore(store)
-// export type RootState = ReturnType<typeof store.getState>
-// export type AppDispatch = typeof store.dispatch
 
 setupListeners(store.dispatch);
 

@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://netology-trainbooking.netoservices.ru/",
+  baseUrl: "https://students.netoservices.ru/fe-diplom/routes/cities?name=${encodeURIComponent(query)}`",
   prepareHeaders: (headers) => {
     headers.set('Accept', 'application/json');
     return headers;

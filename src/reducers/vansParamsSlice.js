@@ -18,6 +18,7 @@ const vansParamsSlice = createSlice({
       resetVans: (state) => initialState,
       setFilterVansList: (prevState, action) => ({
         ...prevState,
+      //vanChecked: drowVansList(action.payload),
       filterVansList: action.payload
     }),
       setTypeVan: (prevState, action) => 
@@ -30,6 +31,7 @@ const vansParamsSlice = createSlice({
       setVanChecked: (prevState, action) => ({
       ...prevState,
         filterVansList: prevState.filterVansList.map((item) => {
+          //return ({...item, checked: !item.checked})
       if (item.coach._id === action.payload) {
         return {...item, checked: !item.checked}
       } else {

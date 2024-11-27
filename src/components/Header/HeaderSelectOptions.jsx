@@ -3,10 +3,14 @@ import { useState } from "react";
 import Nav from "./Nav";
 import BreadCrums from "./BreadCrums/BreadCrums";
 import Datalist from "./Datalist";
-import { setParams } from "../../reducers/routesParamsSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 
+import { setParams } from "../../reducers/routesParamsSlice";
+import { resetVans } from "../../reducers/vansParamsSlice.js";
+import { resetRoutes } from "../../reducers/routesParamsSlice.js";
+import { resetSeats } from "../../reducers/seatsParamsSlice.js";
 import "./header.css";
 
 import point from "../../assets/svg/Point.svg";
@@ -15,6 +19,8 @@ import rotate from "../../assets/svg/rotate.svg";
 
 export default function HeaderSelectOptions() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [valueFrom, setValueFrom] = useState("");
   const [valueTo, setValueTo] = useState("");
 
@@ -66,18 +72,15 @@ export default function HeaderSelectOptions() {
       setValueFrom(valueTo);
       return valueTo;
     });
-    setValueTo((prev) => {
-      return valueFrom;
-    });
+
+    setValueTo((prev) => from_city_id);
 
     setFrom_city_id((prev) => {
       const temp = prev;
       setFrom_city_id(to_city_id);
       return to_city_id;
     });
-    setTo_city_id((prev) => {
-      return from_city_id;
-    });
+    setTo_city_id((prev) => from_city_id); 
   };
 
   return (
