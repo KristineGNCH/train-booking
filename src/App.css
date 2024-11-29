@@ -6,6 +6,10 @@
   margin-right: auto;
 }
 
+.App {
+  background-color: #E5E5E5;
+}
+
 /* 
 :root {
   --font-family: 'Roboto', sans-serif;

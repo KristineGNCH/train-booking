@@ -204,3 +204,29 @@
    padding-left: 83px;
    padding-top: 95px;
 }
+
+.sort-name {
+   color: #928F94;
+}
+
+.sorting-list {
+   display: flex;
+   flex-direction: row;
+}
+
+.sort-value {
+   color: #292929;
+   border: none;
+   background-color: transparent;
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+}
+
+.sort-value:active {
+   border: none;
+   background-color: transparent;
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+}
