@@ -38,6 +38,10 @@
 
 /*filters */
 
+.filters {
+    background-color: #3E3C41;
+}
+
 .dateFilter_departure_title {
     font-family: "Roboto";
     font-size: 30px;
@@ -246,7 +250,7 @@ input:checked+.slider:before {
 
 .price-filter-title,
 .time-filter-main_title-wrapper {
-    width: 160px;
+    width: 100%;
     padding: 30px 0 25px 30px;
     margin: 0;
 
@@ -422,24 +426,24 @@ input:checked+.slider:before {
     height: 10px;
 }
 
-.arrival-vector {
+.arrival-vector,
+.departure-vector {
     width: 30px;
     height: 25px;
-    background-image: url(../../assets/svg/ArrowOrangeLeftBckgrnd.svg);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
     margin: 0 9px 0 0;
 }
 
+.arrival-vector {
+    background-image: url(../../assets/svg/ArrowOrangeLeftBckgrnd.svg);
+}
+
 .departure-vector {
-    width: 30px;
-    height: 25px;
+
     background-image: url(../../assets/svg/ArrowOrangeRightBckgrnd.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 5px;
-    margin: 0 9px 0 0;
+
 }
 
 .closeUP-vector {
@@ -966,5 +970,5 @@ input:checked+.slider:before {
 }
 
 .collapsed {
-    display: none; 
-  }
+    display: none;
+}

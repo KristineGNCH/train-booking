@@ -8,40 +8,27 @@ import { DepartureFilter } from "./DepartureFilter";
 
 import "./../SideBar.css";
 
-export default function TrainSelectFilter() {
+const TrainSelectFilter = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const dispatch = useDispatch();
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
   };
 
-  const dispatch = useDispatch();
-
   const handleChangeTypeVan = (evt) => {
-    if (evt.target.value === vanClasses.second) {
-      evt.target.checked
-        ? dispatch(setOneParam({ key: "have_second_class", value: true }))
-        : dispatch(setOneParam({ key: "have_second_class", value: false }));
-    } else if (evt.target.value === vanClasses.first) {
-      evt.target.checked
-        ? dispatch(setOneParam({ key: "have_first_class", value: true }))
-        : dispatch(setOneParam({ key: "have_first_class", value: false }));
-    } else if (evt.target.value === vanClasses.third) {
-      evt.target.checked
-        ? dispatch(setOneParam({ key: "have_third_class", value: true }))
-        : dispatch(setOneParam({ key: "have_third_class", value: false }));
-    } else if (evt.target.value === vanClasses.fourth) {
-      evt.target.checked
-        ? dispatch(setOneParam({ key: "have_fourth_class", value: true }))
-        : dispatch(setOneParam({ key: "have_fourth_class", value: false }));
-    } else if (evt.target.value === "have_wifi") {
-      evt.target.checked
-        ? dispatch(setOneParam({ key: "have_wifi", value: true }))
-        : dispatch(setOneParam({ key: "have_wifi", value: false }));
-    } else if (evt.target.value === "is_express") {
-      evt.target.checked
-        ? dispatch(setOneParam({ key: "is_express", value: true }))
-        : dispatch(setOneParam({ key: "is_express", value: false }));
+    const { value, checked } = evt.target;
+    const keyMap = {
+      [vanClasses.second]: "have_second_class",
+      [vanClasses.first]: "have_first_class",
+      [vanClasses.third]: "have_third_class",
+      [vanClasses.fourth]: "have_fourth_class",
+      have_wifi: "have_wifi",
+      is_express: "is_express",
+    };
+
+    if (keyMap[value]) {
+      dispatch(setOneParam({ key: keyMap[value], value: checked }));
     }
   };
 
@@ -245,4 +232,6 @@ export default function TrainSelectFilter() {
       </section>
     </>
   );
-}
+};
+
+export default TrainSelectFilter;

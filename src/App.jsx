@@ -3,32 +3,38 @@ import "./App.css";
 
 import MainPage from "./components/MainPage/MainPage";
 import Layout from "./components/Layout";
-import TrainSelect from "./components/TrainSelect/TrainSelect";
-import TrainSelectFilter from "./components/SideBar/Filters/TrainSelectFilter";
-import LastTrainList from "./components/SideBar/LastTrainList";
+
+import TrainSelectFilter from "./components/SideBar/Filters/TrainSelectFilter.jsx";
 import SideBar from "./components/SideBar/SideBar";
-import SeatsSelect from "./components/SeatSelet/SeatsSelect";
+
+import TrainMainBlock from "./components/TrainSelect/TrainBlock.jsx";
+import SecondPage from "./components/secondPage.jsx";
 import Passengers from "./components/Passenger/Passengers";
 import PersonalData from "./components/PersonalData/PersonalData";
 import Confirmation from "./components/Confirmation/Confirmation";
 import OrderSuccess from "./components/OrderSuccess/OrderSuccess";
-import TicketInfo from "./components/TicketInfo/TicketInfo";
+// import NotFound from "./components/NotFound.jsx";
 
 const commonSidebar = <TrainSelectFilter />;
 const commonSidebarBottom = <SideBar />;
 
-const renderLayout = (main, sidebar) => (
-  <Layout main={main} sidebar={sidebar} sidebarBottom={commonSidebarBottom} />
+const createLayout = (main, sidebar) => (
+  <Layout
+    main={main}
+    sidebar={sidebar || commonSidebar}
+    sidebarBottom={commonSidebarBottom}
+  />
 );
 
 const routes = [
   { path: "/", element: <MainPage /> },
-  { path: "trainselect", element: renderLayout(<TrainSelect />, commonSidebar) },
-  { path: "seatsselect", element: renderLayout(<SeatsSelect />, commonSidebar) },
-  { path: "passengers", element: renderLayout(<Passengers />, <TicketInfo />) },
-  { path: "personaldata", element: renderLayout(<PersonalData />, <TicketInfo />) },
-  { path: "confirmation", element: renderLayout(<Confirmation />, <TicketInfo />) },
-  { path: "successfulorder", element: <OrderSuccess /> },
+  { path: "/trainselect", element: createLayout(<TrainMainBlock />) },
+  { path: "/seatsselect", element: createLayout(<SecondPage />) },
+  { path: "/passengers", element: createLayout(<Passengers />) },
+  { path: "/personaldata", element: createLayout(<PersonalData />) },
+  { path: "/confirmation", element: createLayout(<Confirmation />) },
+  { path: "/successfulorder", element: <OrderSuccess /> },
+  // { path: "*", element: <NotFound /> }, // Обработка 404
 ];
 
 function App() {
